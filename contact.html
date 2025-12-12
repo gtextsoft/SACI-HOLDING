@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Saci Holdings</title>
+    <meta name="description"
+        content="Contact Saci Holdings. We are ready to partner, advise, and invest in the future.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .contact-form {
+            background: var(--secondary-dark);
+            padding: 40px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: rgba(10, 14, 23, 0.5);
+            border: 1px solid var(--glass-border);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-info-item h4 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="strategy.html">Strategy</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 150px; padding-bottom: 50px; background: var(--secondary-dark);">
+        <div class="container text-center">
+            <div class="section-header">
+                <h1 class="section-title">Get in Touch</h1>
+                <div class="section-line"></div>
+                <p style="margin-top: 20px; color: var(--text-muted);">Connect with our investment team.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-content">
+                    <h3 style="margin-bottom: 30px;">Contact Information</h3>
+
+                    <div class="contact-info-item">
+                        <h4>Headquarters</h4>
+                        <p style="color: var(--text-muted);">
+                            Saci Holdings, LLC<br>
+                            Houston, Texas<br>
+                            United States of America
+                        </p>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <h4>Inquiries</h4>
+                        <p style="color: var(--text-muted);">
+                            For investment proposals, media inquiries, or general questions:<br>
+                            <a href="mailto:info@saciholdings.com"
+                                style="color: var(--white); text-decoration: underline;">info@saciholdings.com</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <h4>Global Presence</h4>
+                        <p style="color: var(--text-muted);">
+                            USA • UK • UAE • Nigeria
+                        </p>
+                    </div>
+                </div>
+
+                <div class="split-content">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Jane Doe">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" placeholder="Investment Inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SACI <span>HOLDINGS</span></a>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li style="color: var(--text-muted)">Houston, Texas, USA</li>
+                        <li><a href="mailto:info@saciholdings.com">info@saciholdings.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Saci Holdings, LLC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy & Growth | Saci Holdings</title>
+    <meta name="description"
+        content="Saci Holdings' investment strategy, market opportunity, and financial projections.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .strategy-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .strategy-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .strategy-list li::before {
+            content: '•';
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .fin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: rgba(17, 22, 37, 0.4);
+        }
+
+        .fin-table th,
+        .fin-table td {
+            text-align: left;
+            padding: 20px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .fin-table th {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .fin-table td {
+            color: var(--text-main);
+        }
+
+        .fin-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="strategy.html" class="active">Strategy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 150px; padding-bottom: 50px; background: var(--secondary-dark);">
+        <div class="container text-center">
+            <div class="section-header">
+                <h1 class="section-title">Strategic Outlook</h1>
+                <div class="section-line"></div>
+                <p style="margin-top: 20px; color: var(--text-muted);">Combining private equity discipline with
+                    AI-driven innovation.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Functions -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+                <div>
+                    <h3 class="text-gold" style="margin-bottom: 20px;">Core Functions</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Saci Holdings operates not as a passive investor, but as an active builder. Our functions are
+                        categorized into four key pillars:
+                    </p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4>1. Private Equity Investments</h4>
+                        <ul class="strategy-list">
+                            <li>AI-powered companies</li>
+                            <li>Early and growth-stage technology businesses</li>
+                            <li>Scalable enterprises with strong revenue models</li>
+                            <li>Strategic, long-term commercial assets</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4>2. Advisory & Strategic Leadership</h4>
+                        <ul class="strategy-list">
+                            <li>Business strategy and growth planning</li>
+                            <li>Compliance, governance, and risk management</li>
+                            <li>AI adoption and technology integration</li>
+                            <li>Financial oversight and capital structuring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="margin-bottom: 30px;">
+                        <h4>3. Asset & Wealth Management</h4>
+                        <ul class="strategy-list">
+                            <li>Portfolio diversification</li>
+                            <li>Asset protection</li>
+                            <li>Steady returns for investors and stakeholders</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4>4. Value Creation</h4>
+                        <ul class="strategy-list">
+                            <li>Operational optimization</li>
+                            <li>Technology transformation</li>
+                            <li>Market expansion strategies</li>
+                            <li>Executive coaching and organizational leadership</li>
+                        </ul>
+                    </div>
+
+                    <div class="card" style="margin-top: 40px; border-color: var(--accent-gold);">
+                        <h4 style="color: var(--accent-gold);">Competitive Advantage</h4>
+                        <p style="margin-top: 10px; font-size: 14px;">
+                            Saci Holdings strength lies in its ability to combine private equity discipline with
+                            AI-driven innovation, supported by an independent corporate structure and deep expertise in
+                            scaling companies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="section" style="background: var(--secondary-dark);">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-image">
+                    <img src="images/growth-chart.png" alt="Financial Growth Chart">
+                </div>
+                <div class="split-content">
+                    <h2 class="section-title" style="font-size: 32px;">Market Opportunity</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Global AI spending will reach <strong>$632 billion by 2028</strong>, and AI could contribute up
+                        to <strong>$15.7 trillion</strong> to the global economy by 2030.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        AI-driven companies consistently outperform non-AI competitors in efficiency, scalability, and
+                        profitability. Saci Holdings taps into this explosive growth by investing in applied AI models
+                        rather than speculative research.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Financial Projections</h2>
+                <div class="section-line"></div>
+                <p style="margin-top: 20px; color: var(--text-muted);">3-Year Outlook</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="fin-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Revenue</th>
+                            <th>Expenses</th>
+                            <th>Net Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Year 1</td>
+                            <td>$1,200,000</td>
+                            <td>$750,000</td>
+                            <td style="color: var(--accent-gold); font-weight: bold;">$450,000</td>
+                        </tr>
+                        <tr>
+                            <td>Year 2</td>
+                            <td>$2,100,000</td>
+                            <td>$1,050,000</td>
+                            <td style="color: var(--accent-gold); font-weight: bold;">$1,050,000</td>
+                        </tr>
+                        <tr>
+                            <td>Year 3</td>
+                            <td>$3,500,000</td>
+                            <td>$1,600,000</td>
+                            <td style="color: var(--accent-gold); font-weight: bold;">$1,900,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 60px;">
+                <h3 style="margin-bottom: 20px;">Risk Management & Compliance</h3>
+                <div class="grid-3" style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div style="padding: 20px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                        <h4 style="font-size: 16px; margin-bottom: 10px;">Diversification</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Across multiple industries to mitigate
+                            sector specific risks.</p>
+                    </div>
+                    <div style="padding: 20px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                        <h4 style="font-size: 16px; margin-bottom: 10px;">Governance</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Formal structures and regular compliance
+                            audits in every investment.</p>
+                    </div>
+                    <div style="padding: 20px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                        <h4 style="font-size: 16px; margin-bottom: 10px;">Financial Health</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Conservative debt strategies and strong
+                            liquidity maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SACI <span>HOLDINGS</span></a>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li style="color: var(--text-muted)">Houston, Texas, USA</li>
+                        <li><a href="mailto:info@saciholdings.com">info@saciholdings.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Saci Holdings, LLC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

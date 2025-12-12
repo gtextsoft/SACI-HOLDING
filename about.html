@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Saci Holdings</title>
+    <meta name="description"
+        content="Learn about Saci Holdings, our vision, mission, and corporate structure designed for AI-powered growth.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .vision-mission {
+            background: linear-gradient(rgba(10, 14, 23, 0.9), rgba(10, 14, 23, 0.9)), url('images/vision-bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .vm-box {
+            border: 1px solid var(--accent-gold);
+            padding: 40px;
+            background: rgba(10, 14, 23, 0.6);
+            backdrop-filter: blur(5px);
+            margin-bottom: 30px;
+        }
+
+        .structure-tree {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .structure-node {
+            display: inline-block;
+            padding: 20px 30px;
+            background: var(--secondary-dark);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .structure-node.central {
+            border-color: var(--accent-gold);
+            background: rgba(197, 160, 89, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="strategy.html">Strategy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 150px; padding-bottom: 50px; background: var(--secondary-dark);">
+        <div class="container text-center">
+            <div class="section-header">
+                <h1 class="section-title">The Firm</h1>
+                <div class="section-line"></div>
+                <p
+                    style="margin-top: 20px; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Saci Holdings is a global holding company operating at the intersection of private equity, real
+                    estate, and artificial intelligence.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-content">
+                    <h3>About Saci Holdings</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Saci Holdings, LLC is a private equity and investment management firm headquartered in Houston,
+                        Texas. We specialize in acquiring, developing, and scaling high-growth businesses, with a core
+                        focus on artificial intelligence (AI) and technology-enabled enterprises.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        As a global holding company, we own a diverse portfolio of operating subsidiaries across real
+                        estate, media, and event production. Our long-term strategy is to build sustainable, scalable,
+                        and sector-leading businesses across multiple industries and continents.
+                    </p>
+                    <p style="color: var(--text-muted);">
+                        Beyond acquiring technology-driven companies, we also acquire businesses that are not yet
+                        leveraging AI or digital transformation and integrate these tools to modernize, scale, and
+                        reposition them as competitive, future-ready organizations.
+                    </p>
+                </div>
+                <div class="split-image">
+                    <img src="images/hero-bg.png" alt="Corporate Headquarters Concept">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="grid-3" style="grid-template-columns: 1fr 1fr; gap: 50px;">
+                <div class="vm-box">
+                    <h3 class="text-gold" style="margin-bottom: 20px; text-transform: uppercase;">Vision</h3>
+                    <p>To be one of the world’s leading holding companies by accelerating innovation, scaling
+                        transformative businesses, and investing in AI-powered enterprises that shape the future.</p>
+                </div>
+                <div class="vm-box">
+                    <h3 class="text-gold" style="margin-bottom: 20px; text-transform: uppercase;">Mission</h3>
+                    <p>To change the world, one company at a time, by investing in the transformative power of
+                        artificial intelligence and strategic business leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Structure -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Corporate Structure</h2>
+                <div class="section-line"></div>
+                <p style="margin-top: 20px; color: var(--text-muted);">An ecosystem engineered for strategic oversight
+                    and technological integration.</p>
+            </div>
+
+            <div class="structure-tree">
+                <!-- Parent -->
+                <div class="structure-node central">
+                    <h3>Saci Holdings</h3>
+                    <p style="font-size: 14px; color: var(--text-muted);">Strategic Parent & Governance Hub</p>
+                </div>
+
+                <div class="tree-connector-vertical"></div>
+                <div class="tree-connector-horizontal"></div>
+                <div class="tree-connector-branches">
+                    <div class="branch-left"></div>
+                    <div class="branch-right"></div>
+                </div>
+
+                <!-- Children -->
+                <div class="structure-children">
+                    <div class="structure-node">
+                        <h4>Saci Investment Arm</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">AI & Tech Fund</p>
+                    </div>
+                    <div class="structure-node">
+                        <h4>Operating Subsidiaries</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Real Estate, Media, Events</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3" style="margin-top: 60px;">
+                <div class="card">
+                    <h3>Strategic Parent</h3>
+                    <p>Functions as the central hub for capital allocation, corporate governance, AI strategy, and
+                        C-suite level advisory to all subsidiaries.</p>
+                </div>
+                <div class="card">
+                    <h3>Investment Arm</h3>
+                    <p>Acts as the specialized fund focused exclusively on high-growth, AI-powered technology companies,
+                        serving as a pipeline of innovation.</p>
+                </div>
+                <div class="card">
+                    <h3>Operating Subsidiaries</h3>
+                    <p>A curated portfolio of businesses that benefit from the holding company's resources while
+                        executing with agility in their respective markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SACI <span>HOLDINGS</span></a>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li style="color: var(--text-muted)">Houston, Texas, USA</li>
+                        <li><a href="mailto:info@saciholdings.com">info@saciholdings.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Saci Holdings, LLC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

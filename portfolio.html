@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Saci Holdings</title>
+    <meta name="description"
+        content="Explore Saci Holdings' diverse portfolio of operating subsidiaries across real estate, media, and event production.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .portfolio-card {
+            display: flex;
+            background: var(--secondary-dark);
+            border: 1px solid var(--glass-border);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            flex: 1;
+            min-height: 300px;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-content {
+            flex: 1.2;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .portfolio-tag {
+            color: var(--accent-gold);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="strategy.html">Strategy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 150px; padding-bottom: 50px; background: var(--secondary-dark);">
+        <div class="container text-center">
+            <div class="section-header">
+                <h1 class="section-title">Our Portfolio</h1>
+                <div class="section-line"></div>
+                <p style="margin-top: 20px; color: var(--text-muted);">A global collection of scalable, sector-leading
+                    businesses.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- Real Estate -->
+            <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                <h2>Real Estate & Development</h2>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="images/real-estate.png" alt="Gtext Nigeria">
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-tag">Nigeria</span>
+                    <h3>Gtext Nigeria</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        A premier real estate and property development company delivering residential and commercial
+                        projects across Nigeria. Focused on sustainable urban growth and smart city integration.
+                    </p>
+                    <ul>
+                        <li style="color: var(--text-muted); margin-bottom: 5px;">• Residential Development</li>
+                        <li style="color: var(--text-muted);">• Commercial Projects</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="portfolio-card" style="flex-direction: row-reverse;">
+                <div class="portfolio-img">
+                    <img src="images/global-portfolio.png" alt="Gtext UK">
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-tag">UK & Middle East</span>
+                    <h3>Gtext UK & Middle East</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Responsible for transcontinental real estate development, diaspora investment channels, and
+                        strategic partnerships across Europe and the Gulf region.
+                    </p>
+                    <ul>
+                        <li style="color: var(--text-muted); margin-bottom: 5px;">• Cross-border Investment</li>
+                        <li style="color: var(--text-muted);">• Middle East Expansion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="images/real-estate.png" alt="Gtext USA">
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-tag">North America</span>
+                    <h3>Gtext USA</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        The North American investment and real estate division, focused on land banking, property
+                        acquisition, advisory services, and international investor relations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Media & Events -->
+            <div class="section-header" style="text-align: left; margin: 60px 0 40px;">
+                <h2>Media & Production</h2>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="images/media-production.png" alt="SA Production">
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-tag">Media</span>
+                    <h3>SA Production</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        A media and production company that develops documentaries, TV content, creative assets, and
+                        digital media solutions for global audiences.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" style="flex-direction: row-reverse;">
+                <div class="portfolio-img">
+                    <img src="images/events.png" alt="Event Company">
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-tag">Events</span>
+                    <h3>Event Company</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        A premium event management and production subsidiary delivering world-class conferences,
+                        summits, retreats, and corporate experiences worldwide.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SACI <span>HOLDINGS</span></a>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li style="color: var(--text-muted)">Houston, Texas, USA</li>
+                        <li><a href="mailto:info@saciholdings.com">info@saciholdings.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Saci Holdings, LLC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!-- Inline simple media query fix for card direction on mobile -->
+    <style>
+        @media (max-width: 768px) {
+
+            .portfolio-card,
+            .portfolio-card[style] {
+                flex-direction: column !important;
+            }
+        }
+    </style>
+</body>
+
+</html>
