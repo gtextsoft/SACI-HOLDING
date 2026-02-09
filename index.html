@@ -44,40 +44,60 @@
 
     <!-- Hero Section -->
     <header class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-subtitle">The Future of Capital</span>
-            <h1 class="hero-title">Investing in the Power of Artificial Intelligence</h1>
-            <p class="hero-desc">Acquiring, scaling, and modernizing high-growth businesses through strategic capital
-                and applied AI innovation.</p>
-            <a href="about.html" class="btn btn-primary">Our Vision</a>
-            <a href="portfolio.html" class="btn">View Portfolio</a>
+            <div class="hero-text-box">
+                <span class="hero-subtitle">The Future of Capital</span>
+                <h1 class="hero-title">Building Global Prosperity Through<br><span class="text-gold">Purposeful Diversification</span></h1>
+                <p class="hero-desc">Saci Holdings is a multi-sector investment firm specializing in real estate and land development, media and global events, and AI-powered technology companies. We build world-class portfolios that drive sustainable growth across continents.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Join Our Investor Network</a>
+                    <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
         </div>
     </header>
+
+    <!-- Visual Impact Section -->
+    <section class="visual-section">
+        <div class="visual-image-wrapper">
+            <img src="images/Digital-Cloud.jpg" alt="Modern Architecture" class="visual-image">
+            <div class="visual-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="visual-content">
+                <h2 class="visual-title">Building the Future-Ready Enterprise</h2>
+            </div>
+        </div>
+    </section>
 
     <!-- Introduction -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Who We Are</h2>
-                <div class="section-line"></div>
-            </div>
-
             <div class="split-section">
-                <div class="split-image">
-                    <img src="images/ai-tech.png" alt="AI Technology Core">
-                </div>
                 <div class="split-content">
-                    <h3 style="font-size: 32px; margin-bottom: 20px;">Building the Future-Ready Enterprise</h3>
-                    <p style="margin-bottom: 20px; color: var(--text-muted);">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title-large">Who We Are</h2>
+                    <div class="section-line-left"></div>
+                    <p class="intro-text">
                         Saci Holdings, LLC is a private equity and investment management firm headquartered in Houston,
                         Texas. We do not just invest; we build. Our strategy is simple yet powerful: acquire
                         high-potential businesses and supercharge them with artificial intelligence.
                     </p>
-                    <p style="margin-bottom: 30px; color: var(--text-muted);">
+                    <p class="intro-text">
                         From real estate to media and event production, our diverse portfolio spans continents, united
                         by a singular mission: to modernize and scale through technological transformation.
                     </p>
-                    <a href="about.html" class="btn">Read Full Profile</a>
+                    <a href="about.html" class="btn btn-outline">Read Full Profile</a>
+                </div>
+                <div class="split-image">
+                    <div class="image-card">
+                        <img src="images/ai-tech.png" alt="AI Technology Core">
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,7 +105,7 @@
 
     <!-- Key Stats/Impact -->
     <section class="stats-section">
-        <div class="container" style="padding: 60px 0;">
+        <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number">4+</span>
@@ -103,6 +123,9 @@
                     <span class="stat-number">100%</span>
                     <span class="stat-label">Future Focused</span>
                 </div>
+            </div>
+            <div class="stats-cta">
+                <a href="about.html" class="btn btn-outline">Read Full Profile</a>
             </div>
         </div>
     </section>
@@ -140,11 +163,33 @@
 
     <!-- Footer -->
     <footer>
+        <div class="footer-watermark">SACI HOLDINGS</div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo">SACI <span>HOLDINGS</span></a>
-                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
+                    <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation. The booming industry of private equity and technology investment continues to shape global markets.</p>
+                    <div class="footer-social">
+                        <span class="social-label">Connect with us</span>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zm-8 0H4v12h4V8zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Email" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -159,17 +204,51 @@
 
                 <div class="footer-col">
                     <h4>Contact</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span>Houston, Texas, USA</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <a href="mailto:info@saciholdings.com">info@saciholdings.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Global Presence</h4>
                     <ul>
-                        <li style="color: var(--text-muted)">Houston, Texas, USA</li>
-                        <li><a href="mailto:info@saciholdings.com">info@saciholdings.com</a></li>
+                        <li>United States</li>
+                        <li>United Kingdom</li>
+                        <li>United Arab Emirates</li>
+                        <li>Nigeria</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="copyright">
-                &copy; 2024 Saci Holdings, LLC. All Rights Reserved.
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 Saci Holdings, LLC. All Rights Reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
+        <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
     </footer>
 
     <script src="js/script.js"></script>
