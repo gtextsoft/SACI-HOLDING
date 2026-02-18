@@ -62,7 +62,6 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* wrapper stays still — only the img flies */
 }
 
 .loader-logo img {
@@ -70,9 +69,9 @@
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 18px rgba(197, 160, 89, 0.45));
-    /* fly in from top-right, arc down, land with bounce */
-    animation: birdFlyIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    transform-origin: center bottom;
+    /* Flies straight toward you from the distance */
+    animation: birdApproach 1.8s ease-out forwards;
+    transform-origin: center center;
 }
 
 .loader-bar {
@@ -82,9 +81,8 @@
     border-radius: 2px;
     overflow: hidden;
     position: relative;
-    /* bar appears just as logo lands */
     opacity: 0;
-    animation: barAppear 0.3s ease 0.95s forwards;
+    animation: barAppear 0.3s ease 1.65s forwards;
 }
 
 .loader-bar::after {
@@ -95,48 +93,84 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-    /* sweep starts after logo lands */
-    animation: loaderLine 1.4s ease-in-out 1.1s infinite;
+    animation: loaderLine 1.4s ease-in-out 1.7s infinite;
 }
 
-/* Logo flies in from top-right corner, tilts like a gliding bird, lands center */
-@keyframes birdFlyIn {
+/*
+  Bird flies STRAIGHT TOWARD YOU from far away:
+  - Starts as a tiny speck in the center (simulates distance)
+  - Grows larger — like a bird flying at the camera
+  - Y oscillates up/down = natural wing-flap undulation in flight
+  - Slows and descends as it approaches to land
+  - Soft bounce on touchdown
+*/
+@keyframes birdApproach {
     0% {
         opacity: 0;
-        transform: translate(180px, -160px) rotate(-18deg) scale(0.7);
+        transform: scale(0.04) translateY(0px);
     }
 
-    40% {
+    5% {
         opacity: 1;
-        transform: translate(60px, -40px) rotate(-10deg) scale(0.9);
+        transform: scale(0.08) translateY(-4px);
     }
 
-    70% {
-        transform: translate(10px, 8px) rotate(-3deg) scale(1.02);
+    15% {
+        transform: scale(0.18) translateY(4px);
     }
 
-    85% {
-        transform: translate(0px, -6px) rotate(1deg) scale(1.0);
+    25% {
+        transform: scale(0.3) translateY(-6px);
     }
 
-    93% {
-        transform: translate(0px, 3px) rotate(0deg) scale(0.98);
+    35% {
+        transform: scale(0.43) translateY(5px);
     }
 
+    45% {
+        transform: scale(0.57) translateY(-7px);
+    }
+
+    55% {
+        transform: scale(0.7) translateY(4px);
+    }
+
+    65% {
+        transform: scale(0.82) translateY(-5px);
+    }
+
+    74% {
+        transform: scale(0.92) translateY(3px);
+    }
+
+    /* Descending to land */
+    82% {
+        transform: scale(0.98) translateY(8px);
+    }
+
+    /* Touchdown — slight overshoot */
+    89% {
+        transform: scale(1.04) translateY(6px);
+    }
+
+    /* Bounce up */
+    94% {
+        transform: scale(1.01) translateY(-3px);
+    }
+
+    /* Settle */
     100% {
         opacity: 1;
-        transform: translate(0, 0) rotate(0deg) scale(1);
+        transform: scale(1) translateY(0);
     }
 }
 
-/* Bar fades in the moment the logo touches down */
 @keyframes barAppear {
     to {
         opacity: 1;
     }
 }
 
-/* Gold sweep along the bar */
 @keyframes loaderLine {
     0% {
         left: -100%;
@@ -146,6 +180,7 @@
         left: 100%;
     }
 }
+
 
 * {
     margin: 0;
