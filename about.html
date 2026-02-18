@@ -107,9 +107,6 @@
             position: relative;
         }
 
-        .vm-card::before {
-            /* Optional decorative styling if needed matching screenshot dark gradient/border */
-        }
 
         .vm-title {
             color: var(--accent-gold);
@@ -265,13 +262,15 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">SACI <span>HOLDINGS</span></div>
+            </a>
 
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
             <ul class="nav-links">
@@ -284,95 +283,94 @@
         </div>
     </nav>
 
-    <!-- Header / About Dr. Akintayo -->
-    <section class="about-hero">
+    <!-- Header Section -->
+    <header class="section about-hero">
         <div class="container">
-            <h1 class="about-title">About Dr. Stephen Akintayo</h1>
-            <span class="about-subtitle">Chairman, SACI Holdings | Global Investment Expert | Forbes Business
-                Council</span>
-
-            <p class="about-desc">
-                Dr. Stephen Akintayo is a Forbes Business Council member and the Chairman of SACI Holdings, a global
-                private equity firm transforming industries across Africa, the UAE, the UK, and the USA. Rising from
-                humble beginnings to become a Harvard-trained investment expert and author of 45+ books, he leverages
-                his multi-sector ecosystem spanning real estate, tech, and education to bridge the gap between luxury
-                and economic empowerment. Through his foundation and university, Dr. Akintayo is dedicated to a
-                legacy-driven mission of raising one million millionaires by 2050.
-            </p>
-
-            <div class="globe-image-container">
-                <!-- Using vision-bg as it likely contains the globe/network graphic -->
-                <img src="images/vision-bg.png" alt="Global Network">
+            <div class="reveal">
+                <h1 class="about-title">About Dr. Stephen Akintayo</h1>
+                <span class="about-subtitle">Chairman, SACI Holdings | Global Investment Expert | Forbes Business
+                    Council</span>
+                <p class="about-desc">Dr. Stephen Akintayo is a Forbes Business Council member and the Chairman of SACI
+                    Holdings, a global private equity firm transforming industries across Africa, the UAE, the UK, and
+                    the USA. Rising from humble beginnings to become a Harvard-trained investment expert and author of
+                    45+ books, he leverages his multi-sector ecosystem spanning real estate, tech, and education to
+                    bridge the gap between luxury and economic empowerment. Through his foundation and university, Dr.
+                    Akintayo is dedicated to a legacy-driven mission of raising one million millionaires by 2050.</p>
             </div>
 
-            <!-- Stats Row -->
-            <div class="stats-grid-4">
-                <div class="stat-item-new">
-                    <span class="stat-large-val">1</span>
-                    <span class="stat-large-label">Bold Mission</span>
+            <div class="globe-image-container reveal delay-200">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                    alt="Global Network">
+            </div>
+
+            <div class="stats-grid-4 reveal delay-300">
+                <div class="stat-box">
+                    <span class="stat-val">1</span>
+                    <span class="stat-label">CHAIRMAN</span>
                 </div>
-                <div class="stat-item-new">
-                    <span class="stat-large-val">2</span>
-                    <span class="stat-large-label">Global Headquarters</span>
+                <div class="stat-box">
+                    <span class="stat-val">2</span>
+                    <span class="stat-label">BILLION MARKET VALUE</span>
                 </div>
-                <div class="stat-item-new">
-                    <span class="stat-large-val">14K</span>
-                    <span class="stat-large-label">Lives Impacted in 2024</span>
+                <div class="stat-box">
+                    <span class="stat-val">14K</span>
+                    <span class="stat-label">SATISFIED CLIENTS</span>
                 </div>
-                <div class="stat-item-new">
-                    <span class="stat-large-val">$200K+</span>
-                    <span class="stat-large-label">Cash Awarded in Grants</span>
+                <div class="stat-box">
+                    <span class="stat-val">$200K+</span>
+                    <span class="stat-label">CAPITAL WEALTH GROWTH</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Firm Section -->
+    <section class="section firm-section">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">The Firm</h2>
+                <div class="section-line"
+                    style="width: 50px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
+                <p style="color: var(--text-body); max-width: 800px; margin: 0 auto; font-size: 16px;">SACI Holdings is
+                    a global holding company operating at the intersection of private equity, real estate, and
+                    artificial intelligence.</p>
+            </div>
+
+            <div class="vision-mission-grid reveal delay-200" style="margin-top: 60px;">
+                <div class="vm-card">
+                    <h3 class="vm-title">VISION</h3>
+                    <p class="vm-text">To be the world’s leading legacy-driven investment platform, transforming global
+                        markets through innovation, operational excellence, and an absolute commitment to long-term
+                        impact.</p>
+                </div>
+                <div class="vm-card">
+                    <h3 class="vm-title">MISSION</h3>
+                    <p class="vm-text">To inspire, invest, and empower the next generation of billionaire leaders while
+                        stewardship an ecosystem that builds wealth through real estate, technology, and sustainable
+                        opportunities.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Firm -->
-    <section class="firm-section">
-        <div class="container">
-            <h2 class="section-title">The Firm</h2>
-            <div class="section-line"></div>
-            <p
-                style="margin-top: 20px; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
-                Saci Holdings is a global investment company operating at the intersection of private equity, real
-                estate, and artificial intelligence.
-            </p>
-
-            <div class="vision-mission-grid">
-                <div class="vm-card">
-                    <h3 class="vm-title">Vision</h3>
-                    <p class="vm-text">
-                        To be the world’s leading legacy-driven investment platform, transforming global markets and
-                        fostering sustainable wealth through innovation, operational excellence, and disciplined growth
-                        across strategic sectors.
-                    </p>
-                </div>
-                <div class="vm-card">
-                    <h3 class="vm-title">Mission</h3>
-                    <p class="vm-text">
-                        To acquire, scale, and transform businesses into high-value enterprises, while empowering one
-                        million individuals to become first-time millionaires by 2050 through strategic real estate,
-                        education, and economic opportunities.
-                    </p>
-                </div>
+    <!-- The Goal Section -->
+    <section class="section" style="background: var(--primary-dark);">
+        <div class="container text-center">
+            <div class="reveal">
+                <h2 class="section-title">The Goal</h2>
+                <div class="section-line"
+                    style="width: 50px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
             </div>
-        </div>
-    </section>
 
-    <!-- The Goal -->
-    <section class="goal-section" style="background: rgba(10, 14, 23, 0.5);">
-        <div class="container">
-            <h2 class="section-title">The Goal</h2>
-            <div class="section-line"></div>
-
-            <div class="goal-stats">
-                <div>
-                    <span class="stat-large-val" style="color: #fff;">$3B</span>
-                    <span class="stat-large-label">Worth of Assets to be Controlled by 2035</span>
+            <div class="grid-2 reveal delay-200"
+                style="margin-top: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <div class="stat-box">
+                    <span class="stat-val">$3B</span>
+                    <span class="stat-label">TOTAL ASSET TARGET IN 10 YEARS</span>
                 </div>
-                <div>
-                    <span class="stat-large-val" style="color: #fff;">$1B</span>
-                    <span class="stat-large-label">To be Raised for Real Estate Portfolios</span>
+                <div class="stat-box">
+                    <span class="stat-val">$1B</span>
+                    <span class="stat-label">REAL ESTATE DEVELOPMENT IN 5 YEARS</span>
                 </div>
             </div>
         </div>
@@ -381,39 +379,39 @@
     <!-- Corporate Structure -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center reveal">
                 <h2 class="section-title">Corporate Structure</h2>
-                <div class="section-line"></div>
-                <p style="margin-top: 20px; color: var(--text-muted);">
-                    An ecosystem engineered for strategic oversight and technological integration.
-                </p>
+                <div class="section-line"
+                    style="width: 60px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
+                <p style="color: var(--text-muted); font-size: 14px;">An ecosystem engineered for strategic oversight
+                    and technological integration.</p>
             </div>
 
-            <div class="structure-tree">
-                <!-- Parent -->
-                <div class="structure-node parent">
-                    <h4 style="color: var(--accent-gold);">Saci Holdings</h4>
-                    <p>Strategic Parent & Governance Hub</p>
+            <div class="structure-tree reveal-scale">
+                <div class="structure-node parent"
+                    style="margin: 0 auto; border: 1px solid var(--accent-gold); padding: 15px 30px; background: var(--tertiary-dark);">
+                    <h4 style="margin: 0; color: #fff;">Saci Holdings</h4>
+                    <p style="margin: 5px 0 0; font-size: 10px; color: var(--accent-gold); text-transform: uppercase;">
+                        Strategic Governance Hub</p>
                 </div>
 
-                <!-- Connectors -->
-                <div class="tree-lines">
-                    <div class="line-vertical"></div>
-                    <div class="line-horizontal-wrapper">
-                        <div class="line-vertical-small"></div>
-                        <div class="line-vertical-small"></div>
-                    </div>
-                </div>
+                <div class="tree-line"
+                    style="width: 2px; height: 40px; background: var(--accent-gold); margin: 0 auto;"></div>
 
-                <!-- Children -->
-                <div class="structure-children">
-                    <div class="structure-node">
-                        <h4>Saci Investment Arm</h4>
-                        <p>AI & Tech Fund</p>
+                <div class="grid-2" style="max-width: 800px; margin: 0 auto;">
+                    <div class="structure-node"
+                        style="border: 1px solid var(--glass-border); padding: 15px 30px; background: var(--tertiary-dark);">
+                        <h4 style="margin: 0; color: #fff;">Capitals & Investment</h4>
+                        <p
+                            style="margin: 5px 0 0; font-size: 10px; color: var(--text-muted); text-transform: uppercase;">
+                            PE & VC Firm</p>
                     </div>
-                    <div class="structure-node">
-                        <h4>Operating Subsidiaries</h4>
-                        <p>Real Estate, Media, Events</p>
+                    <div class="structure-node"
+                        style="border: 1px solid var(--glass-border); padding: 15px 30px; background: var(--tertiary-dark);">
+                        <h4 style="margin: 0; color: #fff;">Operating Subsidiaries</h4>
+                        <p
+                            style="margin: 5px 0 0; font-size: 10px; color: var(--text-muted); text-transform: uppercase;">
+                            Real Estate, Media & Logistics</p>
                     </div>
                 </div>
             </div>
@@ -426,46 +424,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
-                    <p>Transforming industries through strategic capital allocation and AI-powered innovation. The
-                        booming industry of private equity and technology investment continues to shape global markets.
-                    </p>
-                    <div class="footer-social">
-                        <span class="social-label">Connect with us</span>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zm-8 0H4v12h4V8zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" aria-label="Twitter" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" aria-label="Email" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                        stroke="currentColor" stroke-width="2" fill="none" />
-                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
-                                        fill="none" />
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <h2 style="font-size: 24px; letter-spacing: 2px;">SACI HOLDINGS</h2>
                     </div>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="strategy.html">Strategy</a></li>
@@ -475,56 +443,21 @@
 
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor"
-                                    stroke-width="2" fill="none" />
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none" />
-                            </svg>
-                            <span>Houston, Texas, USA</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                    stroke="currentColor" stroke-width="2" fill="none" />
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none" />
-                            </svg>
-                            <a href="mailto:info@saciholdings.com">info@saciholdings.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Global Presence</h4>
-                    <ul>
-                        <li>United States</li>
-                        <li>United Kingdom</li>
-                        <li>United Arab Emirates</li>
-                        <li>Nigeria</li>
-                    </ul>
+                    <p style="font-size: 14px; margin-bottom: 10px;">Houston, Texas, USA</p>
+                    <p style="font-size: 14px;">info@saciholdings.com</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    &copy; 2026 Saci Holdings, LLC. All Rights Reserved.
+                    &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <button class="scroll-to-top" id="scrollToTop"
+                    style="position: static; transform: none; background: var(--accent-gold); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                    ↑
+                </button>
             </div>
         </div>
-        <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
     </footer>
 
     <script src="js/script.js"></script>

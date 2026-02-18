@@ -2,37 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saci Holdings | Global Private Equity & AI Investment</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SACI Holdings | Global Private Equity & AI Investment</title>
     <meta name="description"
-        content="Saci Holdings is a global private equity firm specializing in acquiring and scaling high-growth businesses through AI and technology.">
+        content="SACI Holdings is a global private equity firm specializing in acquiring and scaling high-growth businesses through AI and technology." />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Add this small file (provided below) -->
+    <link rel="stylesheet" href="css/home.css" />
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+    <nav class="navbar" aria-label="Primary">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="SACI Holdings Home">
+                <div class="logo-text">SACI <span>HOLDINGS</span></div>
+            </a>
 
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
+                <span></span><span></span><span></span>
+            </button>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -42,149 +44,286 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text-box">
-                <span class="hero-subtitle">The Future of Capital</span>
-                <h1 class="hero-title">Building Global Prosperity Through<br><span class="text-gold">Purposeful
-                        Diversification</span></h1>
-                <p class="hero-desc">SACI Holdings is a multi-sector investment firm dedicated to acquiring sustainable,
-                    high-impact enterprises. We steward a diversified, world-class portfolio across AI, logistics,
-                    electric vehicles, biotech, and real estate, focusing on scalable businesses with durable
-                    fundamentals and long-term impact.</p>
-                <div class="hero-buttons">
-                    <a href="community.html" class="btn btn-primary">JOIN OUR INVESTOR NETWORK</a>
-                    <a href="strategy.html" class="btn btn-secondary">OUR INVESTEE SECTORS</a>
-                </div>
-
-                <div class="hero-countdown-wrapper">
-                    <div class="until-launch">UNTIL LAUNCH</div>
-                    <div class="countdown-container" id="launchCountdown">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="days">00</span>
-                            <span class="countdown-label">Days</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="hours">00</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="minutes">00</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="seconds">00</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/hero-bg.png');"></div>
+            <div class="slide" style="background-image: url('images/ai-tech.png');"></div>
+            <div class="slide" style="background-image: url('images/real-estate.png');"></div>
+            <div class="slide" style="background-image: url('images/global-portfolio.png');"></div>
         </div>
+        <div class="hero-overlay"></div>
+
+        <!-- Hero content removed as per user request to have no text on hero and reduce text -->
         <div class="hero-scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="scroll-arrow"></div>
+            <div class="mouse"></div>
+            <span>Scroll to Explore</span>
         </div>
     </header>
 
-    <!-- Visual Impact Section -->
-    <section class="visual-section">
-        <div class="visual-image-wrapper">
-            <img src="images/sacisec.avif" alt="Modern Architecture" class="visual-image">
-            <div class="visual-overlay"></div>
-        </div>
+    <!-- Intro / Value Prop (Moved from Hero for better aesthetics) -->
+    <section class="intro-section">
         <div class="container">
-            <div class="visual-content">
-                <h2 class="visual-title">Building the Future-Ready Enterprise</h2>
-            </div>
-        </div>
-    </section>
-
-    <!-- Introduction -->
-    <section class="section">
-        <div class="container">
-            <div class="split-section">
-                <div class="split-content">
-                    <span class="section-tag">Who We Are</span>
-                    <h2 class="section-title-large">Building the Future-Ready Enterprise</h2>
-                    <div class="section-line-left"></div>
-                    <p class="intro-text">
-                        SACI Holdings is a legacy-driven private equity and venture capital firm dedicated to acquiring,
-                        scaling, and transforming high-potential businesses across Africa, the United States, the UAE,
-                        Qatar, and the UK. We operate as a global ecosystem of innovation and operational excellence,
-                        managing a diversified portfolio that spans real estate, land development, media, and economic
-                        empowerment.
+            <div class="intro-grid">
+                <div class="intro-main reveal-left">
+                    <span class="section-tag">Global Private Equity</span>
+                    <h2 class="hero-title-reduced">Building Global Prosperity Through <span
+                            class="text-gold">Diversification</span></h2>
+                    <p class="hero-desc-reduced">
+                        SACI Holdings identifies and scales high-impact businesses across AI, logistics, real estate,
+                        and biotech—focused on long-term value creation.
                     </p>
-                    <p class="intro-text">
-                        Guided by disciplined growth and a commitment to long-term value, we bridge the gap between
-                        strategic investment and wealth-generating opportunities to build sustainable enterprises for a
-                        global future.
-                    </p>
-                    <a href="about.html" class="btn btn-outline">READ FULL PROFILE</a>
+                    <div class="hero-buttons">
+                        <a href="community.html" class="btn btn-primary">JOIN INVESTOR NETWORK</a>
+                        <a href="strategy.html" class="btn btn-secondary">OUR STRATEGY</a>
+                    </div>
                 </div>
-                <div class="split-image">
-                    <div class="image-card">
-                        <img src="images/ai-tech.png" alt="AI Technology Core">
+                <div class="intro-stats reveal-right">
+                    <div class="small-stat">
+                        <span class="val">4+</span>
+                        <span class="lab">Continents</span>
+                    </div>
+                    <div class="small-stat">
+                        <span class="val">$20B+</span>
+                        <span class="lab">Portfolio Value</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Stats/Impact -->
-    <section class="stats-section">
+    <!-- Trust / Global Footprint strip -->
+    <section class="trust-strip">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">4+</span>
-                    <span class="stat-label">Continents</span>
+            <div class="trust-grid reveal-scale">
+                <div class="trust-item">
+                    <div class="trust-kicker">Global Presence</div>
+                    <div class="trust-text">Africa • USA • UAE • Qatar • UK</div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Core Subsidiaries</span>
+
+                <div class="trust-item">
+                    <div class="trust-kicker">Investment Thesis</div>
+                    <div class="trust-text">Acquire • Optimize • Scale • Exit</div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">$20B</span>
-                    <span class="stat-label">Worth of Asset</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Future Focused</span>
+
+                <div class="trust-item">
+                    <div class="trust-kicker">Focus Sectors</div>
+                    <div class="trust-text">AI • Real Estate • Mobility • Logistics • Biotech</div>
                 </div>
             </div>
-            <div class="stats-cta">
-                <a href="about.html" class="btn btn-outline">READ FULL PROFILE</a>
+
+            <!-- Optional logo strip (replace images later) -->
+            <div class="subsidiary-preview reveal" aria-label="Affiliations and subsidiaries">
+                <img src="images/logo-1.svg" alt="Subsidiary logo 1" />
+                <img src="images/logo-2.svg" alt="Subsidiary logo 2" />
+                <img src="images/logo-3.svg" alt="Subsidiary logo 3" />
+                <img src="images/logo-4.svg" alt="Subsidiary logo 4" />
             </div>
         </div>
     </section>
 
-    <!-- Core Functions Preview -->
+    <!-- Who We Are -->
+    <section class="section who-we-are-section">
+        <div class="container-fluid p-0">
+            <div class="featured-image-block reveal">
+                <div class="featured-image-bg" style="background-image: url('images/sacisec.avif');"></div>
+                <div class="featured-overlay"></div>
+
+                <div class="container relative-z">
+                    <div class="featured-content">
+                        <span class="section-tag mb-0">Legacy-driven capital. Modern execution.</span>
+                        <h2 class="section-title-large">Who We Are</h2>
+                        <h3 class="section-subtitle">Building the Future-Ready Enterprise</h3>
+
+                        <p class="featured-desc">
+                            SACI Holdings is a private equity and venture capital firm acquiring and transforming
+                            high-potential businesses across multiple international markets. We operate a global
+                            ecosystem of innovation and operational excellence—bridging strategic investment and
+                            wealth-generating opportunities to build sustainable enterprises for a global future.
+                        </p>
+
+                        <div class="featured-actions">
+                            <a href="about.html" class="btn btn-primary">READ FULL PROFILE</a>
+                            <a href="portfolio.html" class="btn btn-secondary">VIEW PORTFOLIO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-4 reveal">
+                <div class="stat-box">
+                    <span class="stat-val">4+</span>
+                    <span class="stat-label">Continents</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">5</span>
+                    <span class="stat-label">Core Subsidiaries</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">$20B</span>
+                    <span class="stat-label">Net Asset Value</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">100%</span>
+                    <span class="stat-label">Future Focused</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Thesis -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Expertise</h2>
+            <div class="section-header reveal">
+                <span class="section-tag">How we create value</span>
+                <h2 class="section-title">Our Investment Thesis</h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">01</div>
-                    <h3>Private Equity</h3>
-                    <p>Leading global innovations in green housing, smart cities, and strategic land banking across five
-                        international markets.</p>
+                <div class="card reveal delay-100">
+                    <span class="card-icon">01</span>
+                    <h3>Acquire</h3>
+                    <p>We identify under-optimized, high-potential businesses with durable market demand and strong
+                        fundamentals.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">02</div>
-                    <h3>Venture Capital</h3>
-                    <p>Acquiring and scaling high-potential enterprises through disciplined capital management and
-                        operational transformation.</p>
+
+                <div class="card reveal delay-200">
+                    <span class="card-icon">02</span>
+                    <h3>Optimize</h3>
+                    <p>We install governance, upgrade operations, and apply AI-driven insights to improve efficiency and
+                        margins.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">03</div>
-                    <h3>AI Driven Strategy</h3>
-                    <p>By leveraging data driven insights and smart automation, we optimize business operations and
-                        identify high growth investment opportunities with precision.</p>
+
+                <div class="card reveal delay-300">
+                    <span class="card-icon">03</span>
+                    <h3>Scale</h3>
+                    <p>We expand distribution, partnerships, and market footprint—building resilient enterprises
+                        designed to lead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="section-title">Our Investee Sectors</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card reveal delay-100">
+                    <span class="card-icon">AI</span>
+                    <h3>AI & Automation</h3>
+                    <p>Applied intelligence that improves decision-making, operations, and scalable growth.</p>
+                </div>
+                <div class="card reveal delay-200">
+                    <span class="card-icon">RE</span>
+                    <h3>Real Estate</h3>
+                    <p>Green housing, smart cities, land banking, and transformative development.</p>
+                </div>
+                <div class="card reveal delay-300">
+                    <span class="card-icon">LOG</span>
+                    <h3>Logistics</h3>
+                    <p>Supply chain infrastructure and last-mile systems that power regional growth.</p>
+                </div>
+            </div>
+
+            <div class="stats-cta reveal">
+                <a href="strategy.html" class="btn btn-primary">EXPLORE FULL STRATEGY</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Portfolio / Proof -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Proof of execution</span>
+                <h2 class="section-title">Featured Portfolio Highlights</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid-2">
+                <article class="deal-card reveal-left">
+                    <div class="deal-meta">
+                        <span class="deal-pill">Private Equity</span>
+                        <span class="deal-pill">Operational Upgrade</span>
+                    </div>
+                    <h3>Future-Ready Real Assets</h3>
+                    <p>Strategic land development and modern infrastructure projects designed for long-term compounding
+                        value.</p>
+                    <a class="deal-link" href="portfolio.html">View portfolio →</a>
+                </article>
+
+                <article class="deal-card reveal-right">
+                    <div class="deal-meta">
+                        <span class="deal-pill">Venture</span>
+                        <span class="deal-pill">AI-Enabled</span>
+                    </div>
+                    <h3>Scalable Tech-Driven Businesses</h3>
+                    <p>High-growth enterprises strengthened through governance, data systems, and automation-led scale.
+                    </p>
+                    <a class="deal-link" href="portfolio.html">View portfolio →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights / News (placeholder cards) -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="section-title">Insights</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid-3">
+                <article class="card reveal delay-100">
+                    <span class="card-icon">01</span>
+                    <h3>AI in Value Creation</h3>
+                    <p>How operational intelligence improves margins, forecasting, and scalable execution.</p>
+                    <a href="strategy.html" class="mini-link">Read more →</a>
+                </article>
+
+                <article class="card reveal delay-200">
+                    <span class="card-icon">02</span>
+                    <h3>Risk & Governance</h3>
+                    <p>Disciplined frameworks that protect capital and maximize long-term performance.</p>
+                    <a href="about.html" class="mini-link">Read more →</a>
+                </article>
+
+                <article class="card reveal delay-300">
+                    <span class="card-icon">03</span>
+                    <h3>Global Expansion Playbooks</h3>
+                    <p>Scaling across markets with resilient systems, partnerships, and strong fundamentals.</p>
+                    <a href="community.html" class="mini-link">Read more →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card reveal-scale">
+                <span class="section-tag">For investors & partners</span>
+                <h2>Join the SACI Investor Network</h2>
+                <p>
+                    Access deal flow, insights, and opportunities across our global multi-sector portfolio—built for
+                    long-term
+                    wealth creation.
+                </p>
+                <div class="cta-actions">
+                    <a href="community.html" class="btn btn-primary">GET STARTED</a>
+                    <a href="strategy.html" class="btn btn-secondary">VIEW STRATEGY</a>
                 </div>
             </div>
         </div>
@@ -193,49 +332,20 @@
     <!-- Footer -->
     <footer>
         <div class="footer-watermark">SACI HOLDINGS</div>
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
-                    <p>Transforming industries through strategic capital allocation and AI-powered innovation. The
-                        booming industry of private equity and technology investment continues to shape global markets.
-                    </p>
-                    <div class="footer-social">
-                        <span class="social-label">Connect with us</span>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zm-8 0H4v12h4V8zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" aria-label="Twitter" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" aria-label="Email" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                        stroke="currentColor" stroke-width="2" fill="none" />
-                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
-                                        fill="none" />
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-text">SACI <span>HOLDINGS</span></div>
                     </div>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="strategy.html">Strategy</a></li>
@@ -245,57 +355,27 @@
 
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor"
-                                    stroke-width="2" fill="none" />
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none" />
-                            </svg>
-                            <span>Houston, Texas, USA</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                    stroke="currentColor" stroke-width="2" fill="none" />
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none" />
-                            </svg>
-                            <a href="mailto:info@saciholdings.com">info@saciholdings.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Global Presence</h4>
-                    <ul>
-                        <li>United States</li>
-                        <li>United Kingdom</li>
-                        <li>United Arab Emirates</li>
-                        <li>Nigeria</li>
-                    </ul>
+                    <p style="font-size: 14px; margin-bottom: 10px;">Houston, Texas, USA</p>
+                    <p style="font-size: 14px;">info@saciholdings.com</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    &copy; 2026 Saci Holdings, LLC. All Rights Reserved.
+                    &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
+
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms of Service</a>
+                    <a href="about.html">Privacy</a>
+                    <span class="separator">•</span>
+                    <a href="about.html">Terms</a>
                 </div>
             </div>
         </div>
-        <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
     </footer>
+
+    <!-- Scroll to Top (single instance) -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script src="js/script.js"></script>
 </body>

@@ -1,70 +1,101 @@
-// Saci Holdings - Main Script
+// Saci Holdings - Premium VC Interactions
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('mobile-menu');
+    // 1. Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    // Mobile Menu Toggle
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Close menu when clicking on a link
-        const navLinksItems = navLinks.querySelectorAll('a');
-        navLinksItems.forEach(link => {
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
     }
 
-    // Smooth Scroll for Anchors
+    // 2. Intersection Observer for Reveal Animations
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: stop observing once revealed
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 3. Parallax Effect for Images
+    const parallaxImages = document.querySelectorAll('.visual-image');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        parallaxImages.forEach(img => {
+            const parent = img.parentElement;
+            const speed = 0.2;
+            const rect = parent.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const yPos = -(rect.top * speed);
+                img.style.transform = `scale(1.1) translateY(${yPos}px)`;
+            }
+        });
+    });
+
+    // 4. Smooth Scroll for Anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Simple fade-in animation on scroll (optional enhancement)
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
             }
         });
-    }, observerOptions);
-
-    // Apply to sections
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('fade-in-section'); // Add CSS class for transition if needed
-        observer.observe(section);
     });
 
-    // Scroll to Top Button
+    // 5. Scroll to Top Button
     const scrollToTopBtn = document.getElementById('scrollToTop');
-    
     if (scrollToTopBtn) {
-        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 500) {
                 scrollToTopBtn.classList.add('visible');
             } else {
                 scrollToTopBtn.classList.remove('visible');
             }
         });
 
-        // Scroll to top when clicked
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -73,134 +104,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Typing Effect Function
-    function typeWriter(element, text, speed = 50, delay = 0) {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                element.textContent = '';
-                element.style.opacity = '1';
-                element.classList.add('typing-cursor');
-                let i = 0;
-                
-                function type() {
-                    if (i < text.length) {
-                        element.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(type, speed);
-                    } else {
-                        element.classList.remove('typing-cursor');
-                        resolve();
-                    }
-                }
-                type();
-            }, delay);
+    // 6. Magnetic Effect for Buttons (Subtle)
+    const magneticBtns = document.querySelectorAll('.btn');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.15}px, ${y * 0.2}px)`;
         });
-    }
 
-    // Typing Effect with HTML preservation
-    function typeWriterWithHTML(element, speed = 50, delay = 0) {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                const originalHTML = element.innerHTML;
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = originalHTML;
-                const plainText = tempDiv.textContent || tempDiv.innerText || '';
-                
-                element.innerHTML = '';
-                element.style.opacity = '1';
-                element.classList.add('typing-cursor');
-                let i = 0;
-                
-                function type() {
-                    if (i < plainText.length) {
-                        element.textContent = plainText.substring(0, i + 1);
-                        i++;
-                        setTimeout(type, speed);
-                    } else {
-                        element.classList.remove('typing-cursor');
-                        // Restore original HTML after typing completes
-                        element.innerHTML = originalHTML;
-                        resolve();
-                    }
-                }
-                type();
-            }, delay);
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0, 0)`;
         });
-    }
+    });
+    // 7. Countdown Timer
+    const countdownTarget = new Date();
+    countdownTarget.setDate(countdownTarget.getDate() + 15); // 15 days from now
 
-    // Initialize typing effects on page load - ONLY for hero section
-    function initTypingEffects() {
-        // Only apply typing effect to hero section elements for maximum impact
-        // Hero title typing effect (preserve HTML)
-        const heroTitle = document.querySelector('.hero-title');
-        if (heroTitle) {
-            heroTitle.style.opacity = '0';
-            typeWriterWithHTML(heroTitle, 30, 300);
-        }
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countdownTarget.getTime() - now;
 
-        // Hero subtitle typing effect
-        const heroSubtitle = document.querySelector('.hero-subtitle');
-        if (heroSubtitle) {
-            const originalText = heroSubtitle.textContent;
-            heroSubtitle.style.opacity = '0';
-            typeWriter(heroSubtitle, originalText, 40, 100);
-        }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Hero description typing effect
-        const heroDesc = document.querySelector('.hero-desc');
-        if (heroDesc) {
-            const originalText = heroDesc.textContent;
-            heroDesc.style.opacity = '0';
-            typeWriter(heroDesc, originalText, 20, 800);
-        }
-    }
+        const dayEl = document.querySelector('.countdown-item:nth-child(1) .countdown-number');
+        const hourEl = document.querySelector('.countdown-item:nth-child(2) .countdown-number');
+        const minEl = document.querySelector('.countdown-item:nth-child(3) .countdown-number');
+        const secEl = document.querySelector('.countdown-item:nth-child(4) .countdown-number');
 
-    // Countdown Timer
-    function initCountdown() {
-        const countdownElement = document.getElementById('launchCountdown');
-        if (!countdownElement) return;
+        if (dayEl) dayEl.innerText = days.toString().padStart(2, '0');
+        if (hourEl) hourEl.innerText = hours.toString().padStart(2, '0');
+        if (minEl) minEl.innerText = minutes.toString().padStart(2, '0');
+        if (secEl) secEl.innerText = seconds.toString().padStart(2, '0');
+    };
 
-        // Set launch date to 12 days from now to simulate the "Until Launch" state
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 12);
-        launchDate.setHours(launchDate.getHours() + 3);
-        launchDate.setMinutes(0);
-        launchDate.setSeconds(11);
-
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = launchDate.getTime() - now;
-
-            if (distance < 0) {
-                daysEl.innerText = "00";
-                hoursEl.innerText = "00";
-                minutesEl.innerText = "00";
-                secondsEl.innerText = "00";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            if(daysEl) daysEl.innerText = days < 10 ? '0' + days : days;
-            if(hoursEl) hoursEl.innerText = hours < 10 ? '0' + hours : hours;
-            if(minutesEl) minutesEl.innerText = minutes < 10 ? '0' + minutes : minutes;
-            if(secondsEl) secondsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
-        }
-
-        updateCountdown();
+    if (document.querySelector('.countdown-container')) {
         setInterval(updateCountdown, 1000);
+        updateCountdown();
     }
 
-    initCountdown();
+    // 8. Hero Image Slider
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 seconds per slide
 
-    // Run typing effects when page loads
-    initTypingEffects();
+        const nextSlide = () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        };
+
+        setInterval(nextSlide, slideInterval);
+    }
 });

@@ -117,13 +117,15 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">SACI <span>HOLDINGS</span></div>
+            </a>
 
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
             <ul class="nav-links">
@@ -137,71 +139,80 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="community-hero">
+    <header class="section" style="padding-top: 180px; text-align: center; background: var(--primary-dark);">
         <div class="container">
-            <h1 class="community-title">Join Our Network</h1>
-            <div class="line-gold"></div>
-            <p class="community-subtitle">Connect with investors, owners, and the SACI team.</p>
+            <div class="reveal">
+                <h1 style="font-size: 42px; margin-bottom: 20px;">Join Our Network</h1>
+                <div class="line-gold"
+                    style="width: 60px; height: 1px; background: var(--accent-gold); margin: 0 auto 30px;"></div>
+                <p style="color: var(--text-body); font-size: 18px;">Connect with investors, owners, and the SACI team.
+                </p>
+            </div>
         </div>
     </header>
 
     <!-- Form Section -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section" style="background: var(--primary-dark);">
         <div class="container">
-            <div class="form-container">
+            <div class="form-container reveal-scale delay-100" style="max-width: 800px; margin: 0 auto;">
                 <form action="https://formspree.io/f/mdalkzzg" method="POST">
-
                     <div class="form-group">
                         <label class="form-label">Which Best Describes You?</label>
-                        <select class="form-select">
+                        <select class="form-select" name="role" required>
                             <option value="investor">Investor</option>
-                            <option value="owner">Business Owner</option>
-                            <option value="partner">Partner</option>
+                            <option value="owner">Property Owner</option>
+                            <option value="entrepreneur">Entrepreneur</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Investor/Business Stage</label>
-                        <select class="form-select">
+                        <select class="form-select" name="stage">
                             <option value="angel">Angel / Early Stage (<$250k)< /option>
                             <option value="growth">Growth Stage ($250k - $1M)</option>
-                            <option value="mature">Mature Stage ($1M+)</option>
+                            <option value="scale">Scale Up ($1M+)</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Industry</label>
-                        <select class="form-select">
+                        <select class="form-select" name="industry">
                             <option value="ai">AI / Technology</option>
-                            <option value="realestate">Real Estate</option>
-                            <option value="healthcare">Healthcare / Biotech</option>
-                            <option value="finance">Finance</option>
-                            <option value="other">Other</option>
+                            <option value="real_estate">Real Estate</option>
+                            <option value="logistics">Logistics</option>
+                            <option value="fintech">Fintech</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-input" placeholder="Jane Smith">
+                        <input type="text" class="form-input" name="name" placeholder="John Smith" required
+                            style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-input" placeholder="name@gmail.com">
+                        <input type="email" class="form-input" name="email" placeholder="name@gmail.com" required
+                            style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-input" placeholder="+1 374 273 2378">
+                        <input type="tel" class="form-input" name="phone" placeholder="+1 374 273 2378"
+                            style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Location</label>
-                        <input type="text" class="form-input" placeholder="i.e Houston">
+                        <input type="text" class="form-input" name="location" placeholder="i.e Houston"
+                            style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
-                    <button type="submit" class="btn-submit">Submit</button>
+                    <div class="form-group" style="margin-top: 40px;">
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; text-transform: capitalize; padding: 18px;">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -213,46 +224,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
-                    <p>Transforming industries through strategic capital allocation and AI-powered innovation. The
-                        booming industry of private equity and technology investment continues to shape global markets.
-                    </p>
-                    <div class="footer-social">
-                        <span class="social-label">Connect with us</span>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zm-8 0H4v12h4V8zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" aria-label="Twitter" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" aria-label="Email" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                        stroke="currentColor" stroke-width="2" fill="none" />
-                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
-                                        fill="none" />
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <h2 style="font-size: 24px; letter-spacing: 2px;">SACI HOLDINGS</h2>
                     </div>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
 
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="strategy.html">Strategy</a></li>
@@ -262,56 +243,21 @@
 
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor"
-                                    stroke-width="2" fill="none" />
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none" />
-                            </svg>
-                            <span>Houston, Texas, USA</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                    stroke="currentColor" stroke-width="2" fill="none" />
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none" />
-                            </svg>
-                            <a href="mailto:info@saciholdings.com">info@saciholdings.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Global Presence</h4>
-                    <ul>
-                        <li>United States</li>
-                        <li>United Kingdom</li>
-                        <li>United Arab Emirates</li>
-                        <li>Nigeria</li>
-                    </ul>
+                    <p style="font-size: 14px; margin-bottom: 10px;">Houston, Texas, USA</p>
+                    <p style="font-size: 14px;">info@saciholdings.com</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    &copy; 2026 Saci Holdings, LLC. All Rights Reserved.
+                    &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <button class="scroll-to-top" id="scrollToTop"
+                    style="position: static; transform: none; background: var(--accent-gold); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                    ↑
+                </button>
             </div>
         </div>
-        <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
     </footer>
 
     <script src="js/script.js"></script>
