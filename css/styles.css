@@ -814,21 +814,25 @@ section {
 }
 
 .sub-logo {
-    font-family: var(--font-heading);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--white);
     opacity: 0.4;
+    filter: grayscale(1) brightness(2);
     transition: var(--transition-smooth);
-    cursor: default;
-    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-logo img {
+    height: 40px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
 }
 
 .sub-logo:hover {
     opacity: 1;
-    color: var(--accent-gold);
-    transform: translateY(-2px);
+    filter: grayscale(0) brightness(1);
+    transform: translateY(-5px);
 }
 
 /* ---------------------------
