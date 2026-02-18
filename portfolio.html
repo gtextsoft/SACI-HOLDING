@@ -4,17 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Saci Holdings</title>
+    <title>SACI Holdings: The Ecosystem of Excellence</title>
     <meta name="description"
-        content="Explore Saci Holdings' diverse portfolio of operating subsidiaries across real estate, media, and event production.">
+        content="Saci Holdings is a diversified powerhouse driving innovation in Real Estate, Agriculture, and Technology.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .portfolio-card {
             display: flex;
-            background: var(--secondary-dark);
+            background: #11141B;
+            /* Slightly lighter background for cards */
             border: 1px solid var(--glass-border);
             margin-bottom: 40px;
             overflow: hidden;
@@ -45,135 +52,175 @@
             justify-content: center;
         }
 
-        .portfolio-tag {
+        .portfolio-content h3 {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+        }
+
+        .estate-groups-container {
+            margin-top: 60px;
+        }
+
+        .estate-groups-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .estate-group-header {
+            color: var(--white);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-family: var(--font-heading);
+        }
+
+        .estate-list {
+            list-style: none;
+        }
+
+        .estate-list li {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .estate-list li:hover {
             color: var(--accent-gold);
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            font-weight: 600;
+        }
+
+        /* Helper for the right column alignment to match screenshot */
+        .right-col-spacer {
+            height: 54px;
+            /* Approximate height of the header 'Estate Groups' */
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-card {
+                flex-direction: column !important;
+            }
+
+            .estate-groups-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .right-col-spacer {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
+
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
                 <li><a href="strategy.html">Strategy</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="community.html">Community</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 150px; padding-bottom: 50px; background: var(--secondary-dark);">
+    <!-- Hero Section -->
+    <header class="section" style="padding-top: 150px; padding-bottom: 80px; background: var(--secondary-dark);">
         <div class="container text-center">
             <div class="section-header">
-                <h1 class="section-title">Our Portfolio</h1>
-                <div class="section-line"></div>
-                <p style="margin-top: 20px; color: var(--text-muted);">A global collection of scalable, sector-leading
-                    businesses.</p>
+                <h1 class="section-title" style="font-size: 40px; font-weight: 700;">SACI Holdings: The Ecosystem of
+                    Excellence
+                </h1>
+                <div class="section-line" style="margin-top: 15px; width: 40px; height: 3px;"></div>
+                <p
+                    style="margin-top: 25px; color: #a0a0a0; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6; font-size: 15px;">
+                    <strong style="color: #ccc;">SACI Holdings</strong> is a legacy-driven private equity and venture
+                    capital firm transforming global
+                    markets. With a footprint spanning <strong style="color: var(--white);">Africa, the USA, the UAE,
+                        Qatar, and the UK</strong>, we scale businesses through disciplined growth and operational
+                    brilliance.
+                </p>
             </div>
         </div>
     </header>
 
+    <!-- Strategic Pillars Section -->
     <section class="section">
         <div class="container">
-
-            <!-- Real Estate -->
-            <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-                <h2>Real Estate & Development</h2>
+            <div class="section-header" style="text-align: left; margin-bottom: 50px;">
+                <h2 class="section-title" style="font-size: 28px; font-weight: 700;">The Strategic Pillars</h2>
             </div>
 
+            <!-- Card 1: GText Holdings -->
             <div class="portfolio-card">
                 <div class="portfolio-img">
-                    <img src="images/real-estate.png" alt="Gtext Nigeria">
+                    <img src="images/sacisec.avif" alt="GText Holdings">
                 </div>
                 <div class="portfolio-content">
-                    <span class="portfolio-tag">Nigeria</span>
-                    <h3>Gtext Nigeria</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        A premier real estate and property development company delivering residential and commercial
-                        projects across Nigeria. Focused on sustainable urban growth and smart city integration.
+                    <h3>GText Holdings</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">
+                        A diversified powerhouse driving innovation in <strong style="color: var(--white);">Real Estate,
+                            Agriculture, and Technology</strong>. It serves as the backbone of our multi-sector
+                        footprint.
                     </p>
-                    <ul>
-                        <li style="color: var(--text-muted); margin-bottom: 5px;">• Residential Development</li>
-                        <li style="color: var(--text-muted);">• Commercial Projects</li>
-                    </ul>
                 </div>
             </div>
 
+            <!-- Card 2: GText Homes -->
             <div class="portfolio-card" style="flex-direction: row-reverse;">
                 <div class="portfolio-img">
-                    <img src="images/global-portfolio.png" alt="Gtext UK">
+                    <img src="images/real-estate.png" alt="GText Homes">
                 </div>
                 <div class="portfolio-content">
-                    <span class="portfolio-tag">UK & Middle East</span>
-                    <h3>Gtext UK & Middle East</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        Responsible for transcontinental real estate development, diaspora investment channels, and
-                        strategic partnerships across Europe and the Gulf region.
+                    <h3>GText Homes</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">
+                        The pioneer of Green and Smart Homes in Africa. GText Homes leads the group's real estate
+                        development with an integrated, community-centered approach.
                     </p>
-                    <ul>
-                        <li style="color: var(--text-muted); margin-bottom: 5px;">• Cross-border Investment</li>
-                        <li style="color: var(--text-muted);">• Middle East Expansion</li>
-                    </ul>
                 </div>
             </div>
 
+            <!-- Card 3: GText Land -->
             <div class="portfolio-card">
                 <div class="portfolio-img">
-                    <img src="images/real-estate.png" alt="Gtext USA">
+                    <img src="images/global-portfolio.png" alt="GText Land">
                 </div>
                 <div class="portfolio-content">
-                    <span class="portfolio-tag">North America</span>
-                    <h3>Gtext USA</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        The North American investment and real estate division, focused on land banking, property
-                        acquisition, advisory services, and international investor relations.
+                    <h3>GText Land</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">
+                        Focused on land acquisition and infrastructure, securing high-value assets for future-ready
+                        developments.
                     </p>
                 </div>
             </div>
 
-            <!-- Media & Events -->
-            <div class="section-header" style="text-align: left; margin: 60px 0 40px;">
-                <h2>Media & Production</h2>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="images/media-production.png" alt="SA Production">
-                </div>
-                <div class="portfolio-content">
-                    <span class="portfolio-tag">Media</span>
-                    <h3>SA Production</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        A media and production company that develops documentaries, TV content, creative assets, and
-                        digital media solutions for global audiences.
-                    </p>
-                </div>
-            </div>
-
+            <!-- Card 4: GVest Capital USA -->
             <div class="portfolio-card" style="flex-direction: row-reverse;">
                 <div class="portfolio-img">
-                    <img src="images/events.png" alt="Event Company">
+                    <img src="images/growth-chart.png" alt="GVest Capital USA">
                 </div>
                 <div class="portfolio-content">
-                    <span class="portfolio-tag">Events</span>
-                    <h3>Event Company</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
-                        A premium event management and production subsidiary delivering world-class conferences,
-                        summits, retreats, and corporate experiences worldwide.
+                    <h3>GVest Capital USA</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">
+                        Our international investment arm providing global access to scalable wealth and disciplined
+                        asset management.
                     </p>
                 </div>
             </div>
@@ -181,30 +228,81 @@
         </div>
     </section>
 
+    <!-- Global Estate Groups Section -->
+    <section class="section" style="background: rgba(10, 14, 23, 0.5);">
+        <div class="container">
+            <div class="estate-groups-container">
+                <h2 class="section-title" style="font-size: 28px; font-weight: 700; text-align: left;">Our Global Estate
+                    Groups</h2>
+                <p style="color: var(--text-muted); margin-top: 20px; max-width: 600px; text-align: left;">
+                    Under the GText Homes umbrella, we manage 10 specialized real estate groups, each delivering unique,
+                    high-value housing solutions:
+                </p>
+
+                <div class="estate-groups-grid">
+                    <div>
+                        <h4 class="estate-group-header">Estate Groups</h4>
+                        <ul class="estate-list">
+                            <li>Sapphire Estate Group</li>
+                            <li>Primrose Estate Group</li>
+                            <li>Jasper Estate Group</li>
+                            <li>Emerald Estate Group</li>
+                            <li>Aster By White House</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <!-- Using spacer to align the list start with the left column's list start, matching the screenshot where 'White House Estate Group' is not a header but the first item -->
+                        <div class="right-col-spacer"></div>
+                        <ul class="estate-list">
+                            <li>White House Estate Group</li>
+                            <li>Sardius Estate Group</li>
+                            <li>Moonstone Estate Group</li>
+                            <li>Garnett Estate Group</li>
+                            <li>Beryl Estate Group</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-watermark">SACI HOLDINGS</div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">SACI <span>HOLDINGS</span></a>
-                    <p>Transforming industries through strategic capital allocation and AI-powered innovation. The booming industry of private equity and technology investment continues to shape global markets.</p>
+                    <p>Transforming industries through strategic capital allocation and AI-powered innovation. The
+                        booming industry of private equity and technology investment continues to shape global markets.
+                    </p>
                     <div class="footer-social">
                         <span class="social-label">Connect with us</span>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zm-8 0H4v12h4V8zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="currentColor"/>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zm-8 0H4v12h4V8zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                                        fill="currentColor" />
                                 </svg>
                             </a>
                             <a href="#" aria-label="Twitter" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="currentColor"/>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                                        fill="currentColor" />
                                 </svg>
                             </a>
                             <a href="#" aria-label="Email" class="social-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                        stroke="currentColor" stroke-width="2" fill="none" />
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
+                                        fill="none" />
                                 </svg>
                             </a>
                         </div>
@@ -217,7 +315,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="strategy.html">Strategy</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="community.html">Community</a></li>
                     </ul>
                 </div>
 
@@ -225,16 +323,20 @@
                     <h4>Contact</h4>
                     <ul class="contact-list">
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor"
+                                    stroke-width="2" fill="none" />
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none" />
                             </svg>
                             <span>Houston, Texas, USA</span>
                         </li>
                         <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                    stroke="currentColor" stroke-width="2" fill="none" />
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none" />
                             </svg>
                             <a href="mailto:info@saciholdings.com">info@saciholdings.com</a>
                         </li>
@@ -265,23 +367,13 @@
         </div>
         <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
             </svg>
         </button>
     </footer>
 
     <script src="js/script.js"></script>
-
-    <!-- Inline simple media query fix for card direction on mobile -->
-    <style>
-        @media (max-width: 768px) {
-
-            .portfolio-card,
-            .portfolio-card[style] {
-                flex-direction: column !important;
-            }
-        }
-    </style>
 </body>
 
 </html>

@@ -155,6 +155,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Countdown Timer
+    function initCountdown() {
+        const countdownElement = document.getElementById('launchCountdown');
+        if (!countdownElement) return;
+
+        // Set launch date to 12 days from now to simulate the "Until Launch" state
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 12);
+        launchDate.setHours(launchDate.getHours() + 3);
+        launchDate.setMinutes(0);
+        launchDate.setSeconds(11);
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate.getTime() - now;
+
+            if (distance < 0) {
+                daysEl.innerText = "00";
+                hoursEl.innerText = "00";
+                minutesEl.innerText = "00";
+                secondsEl.innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if(daysEl) daysEl.innerText = days < 10 ? '0' + days : days;
+            if(hoursEl) hoursEl.innerText = hours < 10 ? '0' + hours : hours;
+            if(minutesEl) minutesEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+            if(secondsEl) secondsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
+    initCountdown();
+
     // Run typing effects when page loads
     initTypingEffects();
 });

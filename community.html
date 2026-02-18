@@ -17,6 +17,100 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .community-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .community-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .line-gold {
+            width: 40px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 0 auto 20px;
+        }
+
+        .community-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-family: var(--font-heading);
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            background: rgba(10, 14, 23, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            padding: 15px;
+            font-size: 14px;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        /* Dropdown specific styles to match screenshot dark theme */
+        .form-select option {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            padding: 15px;
+            font-weight: 600;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-gold-bright);
+            transform: translateY(-2px);
+        }
+
+        /* Adjust placeholder color */
+        ::placeholder {
+            color: rgba(148, 163, 184, 0.5);
+        }
+    </style>
 </head>
 
 <body>
@@ -33,159 +127,82 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="strategy.html">Strategy</a></li>
-                <li><a href="community.html">Community</a></li>
+                <li><a href="community.html" class="active">Community</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text-box">
-                <span class="hero-subtitle">The Future of Capital</span>
-                <h1 class="hero-title">Building Global Prosperity Through<br><span class="text-gold">Purposeful
-                        Diversification</span></h1>
-                <p class="hero-desc">SACI Holdings is a multi-sector investment firm dedicated to acquiring sustainable,
-                    high-impact enterprises. We steward a diversified, world-class portfolio across AI, logistics,
-                    electric vehicles, biotech, and real estate, focusing on scalable businesses with durable
-                    fundamentals and long-term impact.</p>
-                <div class="hero-buttons">
-                    <a href="community.html" class="btn btn-primary">JOIN OUR INVESTOR NETWORK</a>
-                    <a href="strategy.html" class="btn btn-secondary">OUR INVESTEE SECTORS</a>
-                </div>
-
-                <div class="hero-countdown-wrapper">
-                    <div class="until-launch">UNTIL LAUNCH</div>
-                    <div class="countdown-container" id="launchCountdown">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="days">00</span>
-                            <span class="countdown-label">Days</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="hours">00</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="minutes">00</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="seconds">00</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="scroll-arrow"></div>
+    <!-- Header Section -->
+    <header class="community-hero">
+        <div class="container">
+            <h1 class="community-title">Join Our Network</h1>
+            <div class="line-gold"></div>
+            <p class="community-subtitle">Connect with investors, owners, and the SACI team.</p>
         </div>
     </header>
 
-    <!-- Visual Impact Section -->
-    <section class="visual-section">
-        <div class="visual-image-wrapper">
-            <img src="images/sacisec.avif" alt="Modern Architecture" class="visual-image">
-            <div class="visual-overlay"></div>
-        </div>
+    <!-- Form Section -->
+    <section class="section" style="padding-top: 0;">
         <div class="container">
-            <div class="visual-content">
-                <h2 class="visual-title">Building the Future-Ready Enterprise</h2>
-            </div>
-        </div>
-    </section>
+            <div class="form-container">
+                <form action="https://formspree.io/f/mdalkzzg" method="POST">
 
-    <!-- Introduction -->
-    <section class="section">
-        <div class="container">
-            <div class="split-section">
-                <div class="split-content">
-                    <span class="section-tag">Who We Are</span>
-                    <h2 class="section-title-large">Building the Future-Ready Enterprise</h2>
-                    <div class="section-line-left"></div>
-                    <p class="intro-text">
-                        SACI Holdings is a legacy-driven private equity and venture capital firm dedicated to acquiring,
-                        scaling, and transforming high-potential businesses across Africa, the United States, the UAE,
-                        Qatar, and the UK. We operate as a global ecosystem of innovation and operational excellence,
-                        managing a diversified portfolio that spans real estate, land development, media, and economic
-                        empowerment.
-                    </p>
-                    <p class="intro-text">
-                        Guided by disciplined growth and a commitment to long-term value, we bridge the gap between
-                        strategic investment and wealth-generating opportunities to build sustainable enterprises for a
-                        global future.
-                    </p>
-                    <a href="about.html" class="btn btn-outline">READ FULL PROFILE</a>
-                </div>
-                <div class="split-image">
-                    <div class="image-card">
-                        <img src="images/ai-tech.png" alt="AI Technology Core">
+                    <div class="form-group">
+                        <label class="form-label">Which Best Describes You?</label>
+                        <select class="form-select">
+                            <option value="investor">Investor</option>
+                            <option value="owner">Business Owner</option>
+                            <option value="partner">Partner</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Key Stats/Impact -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">4+</span>
-                    <span class="stat-label">Continents</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Core Subsidiaries</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">$20B</span>
-                    <span class="stat-label">Worth of Asset</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Future Focused</span>
-                </div>
-            </div>
-            <div class="stats-cta">
-                <a href="about.html" class="btn btn-outline">READ FULL PROFILE</a>
-            </div>
-        </div>
-    </section>
+                    <div class="form-group">
+                        <label class="form-label">Investor/Business Stage</label>
+                        <select class="form-select">
+                            <option value="angel">Angel / Early Stage (<$250k)< /option>
+                            <option value="growth">Growth Stage ($250k - $1M)</option>
+                            <option value="mature">Mature Stage ($1M+)</option>
+                        </select>
+                    </div>
 
-    <!-- Core Functions Preview -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Expertise</h2>
-                <div class="section-line"></div>
-            </div>
+                    <div class="form-group">
+                        <label class="form-label">Industry</label>
+                        <select class="form-select">
+                            <option value="ai">AI / Technology</option>
+                            <option value="realestate">Real Estate</option>
+                            <option value="healthcare">Healthcare / Biotech</option>
+                            <option value="finance">Finance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">01</div>
-                    <h3>Private Equity</h3>
-                    <p>Leading global innovations in green housing, smart cities, and strategic land banking across five
-                        international markets.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">02</div>
-                    <h3>Venture Capital</h3>
-                    <p>Acquiring and scaling high-potential enterprises through disciplined capital management and
-                        operational transformation.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">03</div>
-                    <h3>AI Driven Strategy</h3>
-                    <p>By leveraging data driven insights and smart automation, we optimize business operations and
-                        identify high growth investment opportunities with precision.</p>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" placeholder="Jane Smith">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="name@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-input" placeholder="+1 374 273 2378">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Location</label>
+                        <input type="text" class="form-input" placeholder="i.e Houston">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit</button>
+                </form>
             </div>
         </div>
     </section>
