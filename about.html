@@ -17,265 +17,28 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .about-hero {
-            padding-top: 150px;
-            padding-bottom: 60px;
-            background-color: var(--primary-dark);
-        }
-
-        .about-title {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 10px;
-            font-family: var(--font-heading);
-        }
-
-        .about-subtitle {
-            font-size: 16px;
-            color: var(--white);
-            font-weight: 600;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        .about-desc {
-            color: var(--text-muted);
-            line-height: 1.8;
-            max-width: 900px;
-            margin-bottom: 50px;
-            font-size: 15px;
-        }
-
-        .globe-image-container {
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 4px;
-            margin-bottom: 80px;
-            position: relative;
-        }
-
-        .globe-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .stats-grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .stat-large-val {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--accent-gold);
-            font-family: var(--font-heading);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .stat-large-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
-
-        .firm-section {
-            text-align: center;
-            padding: 20px 0 80px;
-        }
-
-        .vision-mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .vm-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border: 1px solid var(--glass-border);
-            text-align: left;
-            position: relative;
-        }
-
-
-        .vm-title {
-            color: var(--accent-gold);
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .vm-text {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .goal-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .goal-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 50px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Structure Tree Styling Update */
-        .structure-tree {
-            margin-top: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .structure-node {
-            background: rgba(17, 20, 27, 1);
-            border: 1px solid var(--glass-border);
-            padding: 20px 30px;
-            min-width: 200px;
-            text-align: center;
-            position: relative;
-        }
-
-        .structure-node h4 {
-            color: var(--white);
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-
-        .structure-node p {
-            color: var(--text-muted);
-            /* Gold for role text in screenshot? Looks grey/muted usually */
-            font-size: 12px;
-        }
-
-        /* Central Gold Highlight for Parent */
-        .structure-node.parent {
-            border-color: var(--accent-gold);
-        }
-
-        .structure-node.parent h4 {
-            color: var(--white);
-        }
-
-        .structure-node.parent p {
-            color: #888;
-        }
-
-        .tree-lines {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        .line-vertical {
-            width: 1px;
-            height: 40px;
-            background: var(--accent-gold);
-        }
-
-        .line-horizontal-wrapper {
-            display: flex;
-            justify-content: space-between;
-            width: 50%;
-            /* Adjust based on child spacing */
-            max-width: 600px;
-            position: relative;
-        }
-
-        .line-horizontal-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: var(--accent-gold);
-        }
-
-        .line-vertical-small {
-            width: 1px;
-            height: 30px;
-            background: var(--accent-gold);
-        }
-
-        .structure-children {
-            display: flex;
-            justify-content: space-between;
-            width: 50%;
-            max-width: 600px;
-            margin-top: 0;
-        }
-
-        @media (max-width: 768px) {
-            .stats-grid-4 {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .vision-mission-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .goal-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .structure-children {
-                flex-direction: column;
-                gap: 20px;
-                width: 100%;
-                align-items: center;
-            }
-
-            .line-horizontal-wrapper {
-                display: none;
-                /* Hide complex lines on mobile for simpler stack */
-            }
-
-            .line-vertical {
-                height: 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-logo">SACI HOLDINGS</div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="SACI Holdings Home">
                 <div class="logo-text">SACI <span>HOLDINGS</span></div>
             </a>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
+                <span></span><span></span><span></span>
+            </button>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="strategy.html">Strategy</a></li>
                 <li><a href="community.html">Community</a></li>
@@ -421,11 +184,12 @@
     <!-- Footer -->
     <footer>
         <div class="footer-watermark">SACI HOLDINGS</div>
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <h2 style="font-size: 24px; letter-spacing: 2px;">SACI HOLDINGS</h2>
+                        <div class="logo-text">SACI <span>HOLDINGS</span></div>
                     </div>
                     <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
@@ -452,13 +216,18 @@
                 <div class="copyright">
                     &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
-                <button class="scroll-to-top" id="scrollToTop"
-                    style="position: static; transform: none; background: var(--accent-gold); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-                    ↑
-                </button>
+
+                <div class="footer-links">
+                    <a href="about.html">Privacy</a>
+                    <span class="separator">•</span>
+                    <a href="about.html">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script src="js/script.js"></script>
 </body>

@@ -17,11 +17,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Add this small file (provided below) -->
-    <link rel="stylesheet" href="css/home.css" />
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-logo">SACI HOLDINGS</div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar" aria-label="Primary">
@@ -35,7 +37,7 @@
             </button>
 
             <ul class="nav-links" id="primary-menu">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="strategy.html">Strategy</a></li>
@@ -113,11 +115,12 @@
             </div>
 
             <!-- Optional logo strip (replace images later) -->
+            <!-- Subsidiary text logos -->
             <div class="subsidiary-preview reveal" aria-label="Affiliations and subsidiaries">
-                <img src="images/logo-1.svg" alt="Subsidiary logo 1" />
-                <img src="images/logo-2.svg" alt="Subsidiary logo 2" />
-                <img src="images/logo-3.svg" alt="Subsidiary logo 3" />
-                <img src="images/logo-4.svg" alt="Subsidiary logo 4" />
+                <div class="sub-logo">GTEXT HOMES</div>
+                <div class="sub-logo">GVEST CAPITAL</div>
+                <div class="sub-logo">SACI MEDIA</div>
+                <div class="sub-logo">GEEK VILLAGE</div>
             </div>
         </div>
     </section>
@@ -219,20 +222,29 @@
             </div>
 
             <div class="grid-3">
-                <div class="card reveal delay-100">
-                    <span class="card-icon">AI</span>
-                    <h3>AI & Automation</h3>
-                    <p>Applied intelligence that improves decision-making, operations, and scalable growth.</p>
+                <div class="visual-card reveal delay-100" style="background-image: url('images/ai-tech.png');">
+                    <div class="visual-card-overlay"></div>
+                    <div class="visual-card-content">
+                        <span class="card-icon">AI</span>
+                        <h3>AI & Automation</h3>
+                        <p>Applied intelligence that improves decision-making, operations, and scalable growth.</p>
+                    </div>
                 </div>
-                <div class="card reveal delay-200">
-                    <span class="card-icon">RE</span>
-                    <h3>Real Estate</h3>
-                    <p>Green housing, smart cities, land banking, and transformative development.</p>
+                <div class="visual-card reveal delay-200" style="background-image: url('images/real-estate.png');">
+                    <div class="visual-card-overlay"></div>
+                    <div class="visual-card-content">
+                        <span class="card-icon">RE</span>
+                        <h3>Real Estate</h3>
+                        <p>Green housing, smart cities, land banking, and transformative development.</p>
+                    </div>
                 </div>
-                <div class="card reveal delay-300">
-                    <span class="card-icon">LOG</span>
-                    <h3>Logistics</h3>
-                    <p>Supply chain infrastructure and last-mile systems that power regional growth.</p>
+                <div class="visual-card reveal delay-300" style="background-image: url('images/vision-bg.png');">
+                    <div class="visual-card-overlay"></div>
+                    <div class="visual-card-content">
+                        <span class="card-icon">LOG</span>
+                        <h3>Logistics</h3>
+                        <p>Supply chain infrastructure and last-mile systems that power regional growth.</p>
+                    </div>
                 </div>
             </div>
 
@@ -243,7 +255,7 @@
     </section>
 
     <!-- Featured Portfolio / Proof -->
-    <section class="section">
+    <section class="section portfolio-highlights">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Proof of execution</span>
@@ -251,27 +263,35 @@
                 <div class="section-line"></div>
             </div>
 
-            <div class="grid-2">
-                <article class="deal-card reveal-left">
-                    <div class="deal-meta">
-                        <span class="deal-pill">Private Equity</span>
-                        <span class="deal-pill">Operational Upgrade</span>
+            <div class="portfolio-dynamic-grid">
+                <article class="portfolio-item reveal-left">
+                    <div class="portfolio-item-image" style="background-image: url('images/real-estate.png');"></div>
+                    <div class="portfolio-item-overlay"></div>
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">
+                            <span class="deal-pill">Private Equity</span>
+                            <span class="deal-pill">Real Estate</span>
+                        </div>
+                        <h3>Future-Ready Real Assets</h3>
+                        <p>Strategic land development and modern infrastructure projects designed for long-term
+                            compounding value.</p>
+                        <a class="portfolio-item-link" href="portfolio.html">Explore Project <span>→</span></a>
                     </div>
-                    <h3>Future-Ready Real Assets</h3>
-                    <p>Strategic land development and modern infrastructure projects designed for long-term compounding
-                        value.</p>
-                    <a class="deal-link" href="portfolio.html">View portfolio →</a>
                 </article>
 
-                <article class="deal-card reveal-right">
-                    <div class="deal-meta">
-                        <span class="deal-pill">Venture</span>
-                        <span class="deal-pill">AI-Enabled</span>
+                <article class="portfolio-item reveal-right">
+                    <div class="portfolio-item-image" style="background-image: url('images/ai-tech.png');"></div>
+                    <div class="portfolio-item-overlay"></div>
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">
+                            <span class="deal-pill">Venture</span>
+                            <span class="deal-pill">AI-Enabled</span>
+                        </div>
+                        <h3>Scalable Tech-Driven Businesses</h3>
+                        <p>High-growth enterprises strengthened through governance, data systems, and automation-led
+                            scale.</p>
+                        <a class="portfolio-item-link" href="portfolio.html">Explore Project <span>→</span></a>
                     </div>
-                    <h3>Scalable Tech-Driven Businesses</h3>
-                    <p>High-growth enterprises strengthened through governance, data systems, and automation-led scale.
-                    </p>
-                    <a class="deal-link" href="portfolio.html">View portfolio →</a>
                 </article>
             </div>
         </div>
@@ -287,24 +307,24 @@
 
             <div class="grid-3">
                 <article class="card reveal delay-100">
-                    <span class="card-icon">01</span>
+                    <div class="card-kicker">Operational Edge</div>
                     <h3>AI in Value Creation</h3>
                     <p>How operational intelligence improves margins, forecasting, and scalable execution.</p>
-                    <a href="strategy.html" class="mini-link">Read more →</a>
+                    <a href="strategy.html" class="mini-link">Read full paper →</a>
                 </article>
 
                 <article class="card reveal delay-200">
-                    <span class="card-icon">02</span>
-                    <h3>Risk & Governance</h3>
+                    <div class="card-kicker">Governance</div>
+                    <h3>Risk & Frameworks</h3>
                     <p>Disciplined frameworks that protect capital and maximize long-term performance.</p>
-                    <a href="about.html" class="mini-link">Read more →</a>
+                    <a href="about.html" class="mini-link">Read full paper →</a>
                 </article>
 
                 <article class="card reveal delay-300">
-                    <span class="card-icon">03</span>
-                    <h3>Global Expansion Playbooks</h3>
+                    <div class="card-kicker">Global Scale</div>
+                    <h3>Expansion Playbooks</h3>
                     <p>Scaling across markets with resilient systems, partnerships, and strong fundamentals.</p>
-                    <a href="community.html" class="mini-link">Read more →</a>
+                    <a href="community.html" class="mini-link">Read full paper →</a>
                 </article>
             </div>
         </div>

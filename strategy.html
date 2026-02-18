@@ -11,138 +11,248 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .strategy-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .strategy-list li {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-            color: var(--text-muted);
-        }
-
-        .strategy-list li::before {
-            content: '•';
-            color: var(--accent-gold);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .fin-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            background: rgba(17, 22, 37, 0.4);
-        }
-
-        .fin-table th,
-        .fin-table td {
-            text-align: left;
-            padding: 20px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .fin-table th {
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        .fin-table td {
-            color: var(--text-main);
-        }
-
-        .fin-table tr:hover {
-            background: rgba(255, 255, 255, 0.02);
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-logo">SACI HOLDINGS</div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="SACI Holdings Home">
                 <div class="logo-text">SACI <span>HOLDINGS</span></div>
             </a>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
+                <span></span><span></span><span></span>
+            </button>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="strategy.html" class="active">Strategy</a></li>
+                <li><a href="strategy.html">Strategy</a></li>
                 <li><a href="community.html">Community</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Header Section -->
-    <header class="section" style="padding-top: 180px; text-align: center; background: var(--primary-dark);">
+    <header class="section about-hero" style="text-align: center;">
         <div class="container">
             <div class="reveal">
-                <h1 style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px;">Strategic Outlook</h1>
-                <div class="section-line"
-                    style="width: 60px; height: 1px; background: var(--accent-gold); margin: 0 auto 30px;"></div>
-                <p
-                    style="max-width: 800px; margin: 0 auto; color: var(--text-body); line-height: 1.8; font-size: 16px;">
-                    Combining private equity discipline with AI-driven innovation to architect long-term prosperity
-                    through purposeful diversification and operational excellence.</p>
+                <span class="about-subtitle">Strategic Outlook</span>
+                <h1 class="about-title">Architecting Prosperity</h1>
+                <div class="section-line" style="margin: 0 auto 30px;"></div>
+                <p class="about-desc" style="margin: 0 auto;">
+                    We combine private equity discipline with AI-driven innovation to architect long-term prosperity
+                    through purposeful diversification and operational excellence across global markets.
+                </p>
             </div>
         </div>
     </header>
 
-    <!-- Core Functions -->
-    <section class="section" style="background: var(--primary-dark);">
-        <div class="container">
-            <div class="section-header text-center reveal">
-                <h2 class="section-title">Strategic Core Functions</h2>
-                <div class="section-line"
-                    style="width: 50px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
+    <!-- Investment Focus Strips -->
+    <section class="p-0">
+        <!-- Real Estate -->
+        <div class="visual-card-wide reveal" style="background-image: url('images/real-estate.png');">
+            <div class="visual-card-overlay"></div>
+            <div class="container">
+                <div class="visual-card-content">
+                    <h2 class="section-title">Real Estate & Land Development</h2>
+                    <p>Strategically acquiring and developing high-yield properties in emerging urban centers, ensuring
+                        robust capital appreciation.</p>
+                </div>
             </div>
+        </div>
 
-            <div class="grid-3" style="margin-top: 60px;">
-                <div class="card reveal delay-100">
-                    <span class="card-icon">PE</span>
-                    <h3>Private Equity</h3>
-                    <p>Managing direct investments into growth-stage companies with clear scaling paths and sustainable
-                        foundations.</p>
+        <!-- VC & Business Scaling -->
+        <div class="visual-card-wide reveal" style="background-image: url('images/hero-bg.png');">
+            <div class="visual-card-overlay"></div>
+            <div class="container">
+                <div class="visual-card-content">
+                    <h2 class="section-title">Venture Capital & Business Scaling</h2>
+                    <p>Providing strategic capital and operational expertise to growth-stage companies with clear paths
+                        to market leadership.</p>
                 </div>
-                <div class="card reveal delay-200">
-                    <span class="card-icon">AD</span>
-                    <h3>Investment Advisory</h3>
-                    <p>Strategic guidance for cross-border transactions and capital allocation across emerging and
-                        developed markets.</p>
+            </div>
+        </div>
+
+        <!-- Wealth Education -->
+        <div class="visual-card-wide reveal" style="background-image: url('images/vision-bg.png');">
+            <div class="visual-card-overlay"></div>
+            <div class="container">
+                <div class="visual-card-content">
+                    <h2 class="section-title">Wealth Education & Economic Empowerment</h2>
+                    <p>Building intellectual capital through specialized training and resources that empower the next
+                        generation of global investors.</p>
                 </div>
-                <div class="card reveal delay-300">
-                    <span class="card-icon">AM</span>
-                    <h3>Asset Management</h3>
-                    <p>Active management of diversified portfolios to ensure capital preservation and robust long-term
-                        growth.</p>
+            </div>
+        </div>
+
+        <!-- Asset Management -->
+        <div class="visual-card-wide reveal" style="background-image: url('images/global-portfolio.png');">
+            <div class="visual-card-overlay"></div>
+            <div class="container">
+                <div class="visual-card-content">
+                    <h2 class="section-title">Global Asset Management</h2>
+                    <p>Active management of diversified portfolios designed to preserve capital while capturing
+                        multi-sector growth opportunities.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Market Opportunity -->
+    <section class="section">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-image reveal-left">
+                    <img src="images/growth-chart.png" alt="Market Opportunity Growth">
+                </div>
+                <div class="split-content reveal-right">
+                    <span class="section-tag">Growth Thesis</span>
+                    <h2 class="section-title">Market Opportunity</h2>
+                    <p>Our strategy is built on identifying structural gaps in emerging markets and bridging them with
+                        advanced technological integration. By leveraging AI across traditional sectors, we unlock
+                        efficiency and value that standard private equity models often overlook.</p>
+                    <p style="margin-top: 20px;">We focus on high-growth corridors where demographic shifts meet
+                        technological readiness, creating a compounded return environment for our partners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Projections -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="section-title">Financial Projections</h2>
+                <div class="section-line"></div>
+                <p>A multi-year Outlook of growth across core operating sectors.</p>
+            </div>
+
+            <div class="table-container reveal">
+                <table class="projections-table">
+                    <thead>
+                        <tr>
+                            <th>Sector</th>
+                            <th>2024 (E)</th>
+                            <th>2026 (P)</th>
+                            <th>2030 (P)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Real Estate</td>
+                            <td>$150M</td>
+                            <td>$350M</td>
+                            <td>$1.2B</td>
+                        </tr>
+                        <tr>
+                            <td>Venture Capital</td>
+                            <td>$80M</td>
+                            <td>$200M</td>
+                            <td>$750M</td>
+                        </tr>
+                        <tr>
+                            <td>Tech & AI</td>
+                            <td>$45M</td>
+                            <td>$180M</td>
+                            <td>$900M</td>
+                        </tr>
+                        <tr>
+                            <td>Asset Management</td>
+                            <td>$210M</td>
+                            <td>$500M</td>
+                            <td>$2.5B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Sectors Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2 class="section-title">Strategic Sectors</h2>
+                <div class="section-line"></div>
+                <p>Diversified exposure across high-growth, high-impact industries.</p>
+            </div>
+
+            <div class="grid-3" style="margin-top: 40px;">
+                <!-- AI -->
+                <div class="sector-card reveal delay-100">
+                    <div class="sector-card-image" style="background-image: url('images/ai-tech.png');"></div>
+                    <div class="sector-card-content">
+                        <h3>Artificial Intelligence & Emerging Tech</h3>
+                        <p>Powering the next wave of industrial automation and data-driven intelligence.</p>
+                    </div>
+                </div>
+
+                <!-- Logistics -->
+                <div class="sector-card reveal delay-200">
+                    <div class="sector-card-image" style="background-image: url('images/global-portfolio.png');"></div>
+                    <div class="sector-card-content">
+                        <h3>Transportation & Logistics</h3>
+                        <p>Optimizing global supply chains through integrated smart infrastructure.</p>
+                    </div>
+                </div>
+
+                <!-- Biotech -->
+                <div class="sector-card reveal delay-300">
+                    <div class="sector-card-image" style="background-image: url('images/vision-bg.png');"></div>
+                    <div class="sector-card-content">
+                        <h3>Biotech & Longevity</h3>
+                        <p>Investing in the future of health sciences and personalized medicine.</p>
+                    </div>
+                </div>
+
+                <!-- Smart Cities -->
+                <div class="sector-card reveal delay-100">
+                    <div class="sector-card-image" style="background-image: url('images/real-estate.png');"></div>
+                    <div class="sector-card-content">
+                        <h3>Real Estate & Smart Cities</h3>
+                        <p>Developing resilient, tech-enabled urban environments for the 21st century.</p>
+                    </div>
+                </div>
+
+                <!-- EV -->
+                <div class="sector-card reveal delay-200">
+                    <div class="sector-card-image" style="background-image: url('images/hero-bg.png');"></div>
+                    <div class="sector-card-content">
+                        <h3>Electric Vehicles & Mobility</h3>
+                        <p>Pioneering the transition to sustainable, autonomous transportation systems.</p>
+                    </div>
+                </div>
+
+                <!-- Agribusiness -->
+                <div class="sector-card reveal delay-300">
+                    <div class="sector-card-image" style="background-image: url('images/events.png');"></div>
+                    <div class="sector-card-content">
+                        <h3>Agribusiness & Sustainable Energy</h3>
+                        <p>Securing global food systems while developing renewable energy platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer>
         <div class="footer-watermark">SACI HOLDINGS</div>
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <h2 style="font-size: 24px; letter-spacing: 2px;">SACI HOLDINGS</h2>
+                        <div class="logo-text">SACI <span>HOLDINGS</span></div>
                     </div>
                     <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
@@ -169,13 +279,18 @@
                 <div class="copyright">
                     &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
-                <button class="scroll-to-top" id="scrollToTop"
-                    style="position: static; transform: none; background: var(--accent-gold); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-                    ↑
-                </button>
+
+                <div class="footer-links">
+                    <a href="about.html">Privacy</a>
+                    <span class="separator">•</span>
+                    <a href="about.html">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script src="js/script.js"></script>
 </body>

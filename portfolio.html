@@ -17,126 +17,29 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .portfolio-card {
-            display: flex;
-            background: #11141B;
-            /* Slightly lighter background for cards */
-            border: 1px solid var(--glass-border);
-            margin-bottom: 40px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .portfolio-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
-        }
-
-        .portfolio-img {
-            flex: 1;
-            min-height: 300px;
-        }
-
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .portfolio-content {
-            flex: 1.2;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .portfolio-content h3 {
-            color: var(--white);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: var(--font-heading);
-        }
-
-        .estate-groups-container {
-            margin-top: 60px;
-        }
-
-        .estate-groups-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 50px;
-        }
-
-        .estate-group-header {
-            color: var(--white);
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            font-family: var(--font-heading);
-        }
-
-        .estate-list {
-            list-style: none;
-        }
-
-        .estate-list li {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        .estate-list li:hover {
-            color: var(--accent-gold);
-        }
-
-        /* Helper for the right column alignment to match screenshot */
-        .right-col-spacer {
-            height: 54px;
-            /* Approximate height of the header 'Estate Groups' */
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-card {
-                flex-direction: column !important;
-            }
-
-            .estate-groups-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .right-col-spacer {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Preloader (Optional, but good for consistency) -->
+    <div class="preloader">
+        <div class="loader-logo">SACI HOLDINGS</div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="SACI Holdings Home">
                 <div class="logo-text">SACI <span>HOLDINGS</span></div>
             </a>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
+                <span></span><span></span><span></span>
+            </button>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="strategy.html">Strategy</a></li>
                 <li><a href="community.html">Community</a></li>
             </ul>
@@ -240,10 +143,10 @@
                     specialized real estate groups, each delivering unique, high-value housing solutions:</p>
             </div>
 
-            <div class="grid-2 reveal" style="max-width: 800px;">
+            <div class="estate-grid reveal">
                 <div class="estate-col">
-                    <h3 style="font-size: 18px; color: #fff; margin-bottom: 30px;">Estate Groups</h3>
-                    <ul style="list-style: none; color: var(--text-body); font-size: 15px; line-height: 2.5;">
+                    <h3 class="section-tag">Estate Groups</h3>
+                    <ul class="estate-list">
                         <li>Sapphire Estate Group</li>
                         <li>Primrose Estate Group</li>
                         <li>Jasper Estate Group</li>
@@ -252,8 +155,8 @@
                     </ul>
                 </div>
                 <div class="estate-col">
-                    <h3 style="opacity: 0; font-size: 18px; margin-bottom: 30px;">.</h3>
-                    <ul style="list-style: none; color: var(--text-body); font-size: 15px; line-height: 2.5;">
+                    <span class="section-tag" style="visibility: hidden;">.</span>
+                    <ul class="estate-list">
                         <li>White House Estate Group</li>
                         <li>Sardius Estate Group</li>
                         <li>Moonstone Estate Group</li>
@@ -268,11 +171,12 @@
     <!-- Footer -->
     <footer>
         <div class="footer-watermark">SACI HOLDINGS</div>
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <h2 style="font-size: 24px; letter-spacing: 2px;">SACI HOLDINGS</h2>
+                        <div class="logo-text">SACI <span>HOLDINGS</span></div>
                     </div>
                     <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
@@ -299,13 +203,18 @@
                 <div class="copyright">
                     &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
-                <button class="scroll-to-top" id="scrollToTop"
-                    style="position: static; transform: none; background: var(--accent-gold); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-                    ↑
-                </button>
+
+                <div class="footer-links">
+                    <a href="about.html">Privacy</a>
+                    <span class="separator">•</span>
+                    <a href="about.html">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script src="js/script.js"></script>
 </body>

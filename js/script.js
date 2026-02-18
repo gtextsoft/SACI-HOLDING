@@ -1,6 +1,17 @@
 // Saci Holdings - Premium VC Interactions
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Preloader
+    window.addEventListener('load', () => {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800);
+        }
+    });
+
     // 1. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     const menuToggle = document.querySelector('.menu-toggle');
@@ -36,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Intersection Observer for Reveal Animations
     const revealOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -44,8 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: stop observing once revealed
-                // revealObserver.unobserve(entry.target);
             }
         });
     }, revealOptions);
@@ -53,19 +62,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 3. Parallax Effect for Images
-    const parallaxImages = document.querySelectorAll('.visual-image');
-    window.addEventListener('scroll', () => {
+    // 3. Enhanced Parallax Effect
+    const parallaxElements = document.querySelectorAll('.featured-image-bg, .visual-card, .pillar-img img, .globe-image-container img');
+
+    const handleParallax = () => {
         const scrolled = window.pageYOffset;
-        parallaxImages.forEach(img => {
-            const parent = img.parentElement;
-            const speed = 0.2;
+        parallaxElements.forEach(el => {
+            const parent = el.parentElement;
+            const speed = 0.15;
             const rect = parent.getBoundingClientRect();
+
             if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const yPos = -(rect.top * speed);
-                img.style.transform = `scale(1.1) translateY(${yPos}px)`;
+                const yPos = (rect.top * speed);
+                // Handle both img tags and background-images
+                if (el.tagName === 'IMG') {
+                    el.style.transform = `scale(1.1) translateY(${yPos}px)`;
+                } else {
+                    el.style.backgroundPositionY = `${50 + (yPos * 0.1)}%`;
+                }
             }
         });
+    };
+    window.addEventListener('scroll', handleParallax);
+
+    // 3.5 Auto-Active Navbar Links
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 
     // 4. Smooth Scroll for Anchors

@@ -17,123 +17,31 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .community-hero {
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-
-        .community-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-
-        .line-gold {
-            width: 40px;
-            height: 2px;
-            background: var(--accent-gold);
-            margin: 0 auto 20px;
-        }
-
-        .community-subtitle {
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px 80px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-label {
-            display: block;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 10px;
-            font-family: var(--font-heading);
-        }
-
-        .form-input,
-        .form-select {
-            width: 100%;
-            background: rgba(10, 14, 23, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            padding: 15px;
-            font-size: 14px;
-            border-radius: 4px;
-            font-family: var(--font-body);
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            color: var(--white);
-        }
-
-        /* Dropdown specific styles to match screenshot dark theme */
-        .form-select option {
-            background-color: var(--primary-dark);
-            color: var(--white);
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            border: none;
-            padding: 15px;
-            font-weight: 600;
-            text-transform: capitalize;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .btn-submit:hover {
-            background: var(--accent-gold-bright);
-            transform: translateY(-2px);
-        }
-
-        /* Adjust placeholder color */
-        ::placeholder {
-            color: rgba(148, 163, 184, 0.5);
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-logo">SACI HOLDINGS</div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="SACI Holdings Home">
                 <div class="logo-text">SACI <span>HOLDINGS</span></div>
             </a>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
+                <span></span><span></span><span></span>
+            </button>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="strategy.html">Strategy</a></li>
-                <li><a href="community.html" class="active">Community</a></li>
+                <li><a href="community.html">Community</a></li>
             </ul>
         </div>
     </nav>
@@ -221,11 +129,12 @@
     <!-- Footer -->
     <footer>
         <div class="footer-watermark">SACI HOLDINGS</div>
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <h2 style="font-size: 24px; letter-spacing: 2px;">SACI HOLDINGS</h2>
+                        <div class="logo-text">SACI <span>HOLDINGS</span></div>
                     </div>
                     <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
@@ -252,13 +161,18 @@
                 <div class="copyright">
                     &copy; 2026 SACI HOLDINGS, LLC. ALL RIGHTS RESERVED.
                 </div>
-                <button class="scroll-to-top" id="scrollToTop"
-                    style="position: static; transform: none; background: var(--accent-gold); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-                    ↑
-                </button>
+
+                <div class="footer-links">
+                    <a href="about.html">Privacy</a>
+                    <span class="separator">•</span>
+                    <a href="about.html">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script src="js/script.js"></script>
 </body>
