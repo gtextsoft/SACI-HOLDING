@@ -58,27 +58,85 @@
 }
 
 .loader-logo {
-    font-family: var(--font-heading);
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* wrapper stays still — only the img flies */
 }
 
-.loader-logo::after {
+.loader-logo img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 18px rgba(197, 160, 89, 0.45));
+    /* fly in from top-right, arc down, land with bounce */
+    animation: birdFlyIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform-origin: center bottom;
+}
+
+.loader-bar {
+    width: 160px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    /* bar appears just as logo lands */
+    opacity: 0;
+    animation: barAppear 0.3s ease 0.95s forwards;
+}
+
+.loader-bar::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: -100%;
     width: 100%;
-    height: 2px;
-    background: var(--accent-gold);
-    animation: loaderLine 2s infinite;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    /* sweep starts after logo lands */
+    animation: loaderLine 1.4s ease-in-out 1.1s infinite;
 }
 
+/* Logo flies in from top-right corner, tilts like a gliding bird, lands center */
+@keyframes birdFlyIn {
+    0% {
+        opacity: 0;
+        transform: translate(180px, -160px) rotate(-18deg) scale(0.7);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translate(60px, -40px) rotate(-10deg) scale(0.9);
+    }
+
+    70% {
+        transform: translate(10px, 8px) rotate(-3deg) scale(1.02);
+    }
+
+    85% {
+        transform: translate(0px, -6px) rotate(1deg) scale(1.0);
+    }
+
+    93% {
+        transform: translate(0px, 3px) rotate(0deg) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+/* Bar fades in the moment the logo touches down */
+@keyframes barAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Gold sweep along the bar */
 @keyframes loaderLine {
     0% {
         left: -100%;
@@ -388,6 +446,18 @@ section {
     margin-top: -4px;
     font-weight: 500;
 }
+
+.logo-img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+.navbar.scrolled .logo-img {
+    height: 52px;
+}
+
 
 .nav-links {
     display: flex;
@@ -1859,7 +1929,19 @@ footer {
     }
 
     .navbar {
-        padding: 15px 0;
+        padding: 10px 0;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-img {
+        height: 32px;
     }
 
     .hero {
@@ -2159,5 +2241,244 @@ footer {
 
     .sector-card-image {
         height: 200px;
+    }
+}
+
+/* ---------------------------
+   17) About Page Refinements
+---------------------------- */
+.about-hero {
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+.image-frame {
+    position: relative;
+    transition: var(--transition-smooth);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.image-frame:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-gold) !important;
+}
+
+.image-frame::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid var(--accent-gold);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.vm-icon {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
+    font-family: var(--font-title);
+}
+
+.vm-card {
+    padding: 60px !important;
+}
+
+.visual-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+.structure-visual-row {
+    margin-top: 60px;
+}
+
+@media (max-width: 992px) {
+    .about-hero {
+        padding-top: 150px;
+    }
+
+    .image-frame {
+        margin-top: 60px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-frame::after {
+        display: none;
+    }
+
+    .tree-branches {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    /* Additional for Pillar Cards in Portfolio */
+    .pillar-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pillar-content {
+        padding: 40px 20px !important;
+        order: 2;
+    }
+
+    .pillar-img {
+        height: 300px !important;
+        order: 1;
+    }
+
+    /* Estate lists on mobile */
+    .estate-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Tree visualization cleanup */
+    .tree-container {
+        padding: 0 10px;
+    }
+
+    .tree-line {
+        display: none;
+        /* Hide vertical line on mobile as branches stack */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Navbar tweaks */
+    .logo-text {
+        font-size: 20px;
+    }
+
+    /* Header text alignment */
+    header.section {
+        padding-top: 140px !important;
+    }
+
+    .section-title {
+        font-size: 28px !important;
+    }
+
+    /* Projections table scroll indicator */
+    .table-container {
+        position: relative;
+    }
+
+    .table-container::after {
+        content: 'Scroll →';
+        position: absolute;
+        bottom: 5px;
+        right: 15px;
+        font-size: 10px;
+        color: var(--accent-gold);
+        opacity: 0.6;
+    }
+
+    /* Stats refinement */
+    .stat-box .stat-val {
+        font-size: 40px !important;
+    }
+
+    /* VM Cards */
+    .vm-card {
+        padding: 40px 25px !important;
+    }
+
+    /* Form container on mobile */
+    .form-container {
+        padding: 30px 20px !important;
+    }
+}
+
+/* ---------------------------
+   Mobile Navigation
+---------------------------- */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(2, 4, 6, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        list-style: none;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 22px;
+        letter-spacing: 0.15em;
+        opacity: 0.8;
+    }
+
+    .nav-links a:hover {
+        opacity: 1;
+        color: var(--accent-gold);
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1001;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-reduced {
+        font-size: 32px !important;
+    }
+
+    .section-tag {
+        font-size: 10px;
+    }
+
+    .about-title {
+        font-size: 36px !important;
+    }
+
+    .visual-card-wide h2 {
+        font-size: 28px !important;
+    }
+
+    .visual-card-wide p {
+        font-size: 15px !important;
     }
 }

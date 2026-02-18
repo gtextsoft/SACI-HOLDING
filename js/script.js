@@ -189,4 +189,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setInterval(nextSlide, slideInterval);
     }
+
+    // 9. Community Form Submission (AJAX)
+    const communityForm = document.getElementById('community-form');
+    const formSuccess = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (communityForm) {
+        communityForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable button and show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Submitting...';
+            }
+
+            const formData = new FormData(communityForm);
+
+            try {
+                const response = await fetch(communityForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success: Hide form and show success message with WhatsApp button
+                    communityForm.style.display = 'none';
+                    if (formSuccess) {
+                        formSuccess.style.display = 'block';
+                        // Trigger reveal for success message
+                        formSuccess.classList.add('active');
+                    }
+                    window.scrollTo({
+                        top: communityForm.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        alert(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        alert("Oops! There was a problem submitting your form. Please try again.");
+                    }
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'Submit';
+                    }
+                }
+            } catch (error) {
+                alert("Oops! There was a problem submitting your form. Please check your connection.");
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Submit';
+                }
+            }
+        });
+    }
 });

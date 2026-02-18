@@ -22,14 +22,17 @@
 <body>
     <!-- Preloader -->
     <div class="preloader">
-        <div class="loader-logo">SACI HOLDINGS</div>
+        <div class="loader-logo">
+            <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings">
+            <div class="loader-bar"></div>
+        </div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
             <a href="index.html" class="logo" aria-label="SACI Holdings Home">
-                <div class="logo-text">SACI <span>HOLDINGS</span></div>
+                <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings" class="logo-img">
             </a>
 
             <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
@@ -47,66 +50,88 @@
     </nav>
 
     <!-- Header Section -->
+    <!-- Header Section -->
     <header class="section about-hero">
         <div class="container">
-            <div class="reveal">
-                <h1 class="about-title">About Dr. Stephen Akintayo</h1>
-                <span class="about-subtitle">Chairman, SACI Holdings | Global Investment Expert | Forbes Business
-                    Council</span>
-                <p class="about-desc">Dr. Stephen Akintayo is a Forbes Business Council member and the Chairman of SACI
-                    Holdings, a global private equity firm transforming industries across Africa, the UAE, the UK, and
-                    the USA. Rising from humble beginnings to become a Harvard-trained investment expert and author of
-                    45+ books, he leverages his multi-sector ecosystem spanning real estate, tech, and education to
-                    bridge the gap between luxury and economic empowerment. Through his foundation and university, Dr.
-                    Akintayo is dedicated to a legacy-driven mission of raising one million millionaires by 2050.</p>
-            </div>
+            <div class="split-section" style="align-items: flex-start;">
+                <div class="split-content reveal-left">
+                    <span class="section-tag">The Chairman</span>
+                    <h1 class="about-title" style="font-size: clamp(32px, 5vw, 64px);">Dr. Stephen Akintayo</h1>
+                    <h3 class="section-subtitle">Forbes Business Council | Global Investment Expert</h3>
 
-            <div class="globe-image-container reveal delay-200">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
-                    alt="Global Network">
-            </div>
-
-            <div class="stats-grid-4 reveal delay-300">
-                <div class="stat-box">
-                    <span class="stat-val">1</span>
-                    <span class="stat-label">CHAIRMAN</span>
+                    <p class="about-desc">
+                        Dr. Stephen Akintayo is a Forbes Business Council member and the Chairman of SACI Holdings, a
+                        global private equity firm transforming industries across Africa, the UAE, the UK, and the USA.
+                    </p>
+                    <p class="about-desc">
+                        Rising from humble beginnings to become a Harvard-trained investment expert and author of 45+
+                        books, he leverages a multi-sector ecosystem spanning real estate, tech, and education to bridge
+                        the gap between luxury and economic empowerment.
+                    </p>
+                    <p class="about-desc" style="color: var(--accent-gold); font-weight: 600; margin-top: 20px;">
+                        Mission: Raising one million millionaires by 2050.
+                    </p>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-val">2</span>
-                    <span class="stat-label">BILLION MARKET VALUE</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-val">14K</span>
-                    <span class="stat-label">SATISFIED CLIENTS</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-val">$200K+</span>
-                    <span class="stat-label">CAPITAL WEALTH GROWTH</span>
+                <div class="split-image reveal-right">
+                    <div class="image-frame"
+                        style="border: 1px solid var(--accent-gold); padding: 10px; background: rgba(197, 160, 89, 0.05); border-radius: 4px;">
+                        <img src="https://usngrealestate.com/wp-content/uploads/2024/10/Dr-Stephen-Akintayo-2.jpg"
+                            alt="Dr. Stephen Akintayo Portrait" style="width: 100%; border-radius: 2px;">
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- The Firm Section -->
-    <section class="section firm-section">
+    <!-- Detailed Stats Strip -->
+    <section class="section section-alt p-0"
+        style="background: var(--secondary-dark); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
         <div class="container">
-            <div class="reveal">
+            <div class="stats-grid-4 reveal" style="padding: 60px 0;">
+                <div class="stat-box">
+                    <span class="stat-val">45</span>
+                    <span class="stat-label">Published Books</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">10</span>
+                    <span class="stat-label">Global Real Estate Groups</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">100K</span>
+                    <span class="stat-label">Lives Impacted via Philanthropy</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">$200K+</span>
+                    <span class="stat-label">Distributed in Global Grants</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Firm -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Foundation</span>
                 <h2 class="section-title">The Firm</h2>
-                <div class="section-line"
-                    style="width: 50px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
-                <p style="color: var(--text-body); max-width: 800px; margin: 0 auto; font-size: 16px;">SACI Holdings is
-                    a global holding company operating at the intersection of private equity, real estate, and
-                    artificial intelligence.</p>
+                <div class="section-line"></div>
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.8;">SACI Holdings is a global holding company
+                    operating at the intersection of private equity, real estate, and artificial intelligence. We
+                    engineer value through strategic oversight and technological integration.</p>
             </div>
 
             <div class="vision-mission-grid reveal delay-200" style="margin-top: 60px;">
-                <div class="vm-card">
+                <div class="vm-card" style="position: relative; overflow: hidden;">
+                    <span
+                        style="position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.03; font-weight: 900; color: var(--white);">V</span>
                     <h3 class="vm-title">VISION</h3>
                     <p class="vm-text">To be the world’s leading legacy-driven investment platform, transforming global
                         markets through innovation, operational excellence, and an absolute commitment to long-term
                         impact.</p>
                 </div>
-                <div class="vm-card">
+                <div class="vm-card" style="position: relative; overflow: hidden;">
+                    <span
+                        style="position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.03; font-weight: 900; color: var(--white);">M</span>
                     <h3 class="vm-title">MISSION</h3>
                     <p class="vm-text">To inspire, invest, and empower the next generation of billionaire leaders while
                         stewardship an ecosystem that builds wealth through real estate, technology, and sustainable
@@ -116,24 +141,28 @@
         </div>
     </section>
 
-    <!-- The Goal Section -->
-    <section class="section" style="background: var(--primary-dark);">
-        <div class="container text-center">
+    <!-- The Goal -->
+    <section class="section section-alt"
+        style="background: url('images/hero-bg.png') center/cover fixed; position: relative; padding: 120px 0;">
+        <div class="visual-overlay" style="background: rgba(2, 4, 6, 0.9);"></div>
+        <div class="container relative-z text-center">
             <div class="reveal">
+                <span class="section-tag">2035 Roadmap</span>
                 <h2 class="section-title">The Goal</h2>
-                <div class="section-line"
-                    style="width: 50px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
+                <div class="section-line"></div>
             </div>
 
             <div class="grid-2 reveal delay-200"
-                style="margin-top: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
-                <div class="stat-box">
-                    <span class="stat-val">$3B</span>
-                    <span class="stat-label">TOTAL ASSET TARGET IN 10 YEARS</span>
+                style="margin-top: 60px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div class="stat-box"
+                    style="background: var(--glass-bg); padding: 50px; border: 1px solid var(--glass-border); border-radius: 8px;">
+                    <span class="stat-val" style="font-size: 64px; color: var(--accent-gold);">$40B</span>
+                    <span class="stat-label">Worth of Assets to be controlled by 2035</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-val">$1B</span>
-                    <span class="stat-label">REAL ESTATE DEVELOPMENT IN 5 YEARS</span>
+                <div class="stat-box"
+                    style="background: var(--glass-bg); padding: 50px; border: 1px solid var(--glass-border); border-radius: 8px;">
+                    <span class="stat-val" style="font-size: 64px; color: var(--accent-gold);">$1B</span>
+                    <span class="stat-label">To be raised for Real Estate Portfolios</span>
                 </div>
             </div>
         </div>
@@ -143,43 +172,69 @@
     <section class="section">
         <div class="container">
             <div class="section-header text-center reveal">
+                <span class="section-tag">Architecture</span>
                 <h2 class="section-title">Corporate Structure</h2>
-                <div class="section-line"
-                    style="width: 60px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
-                <p style="color: var(--text-muted); font-size: 14px;">An ecosystem engineered for strategic oversight
-                    and technological integration.</p>
+                <div class="section-line"></div>
+                <p>An ecosystem engineered for strategic oversight and technological integration.</p>
             </div>
 
-            <div class="structure-tree reveal-scale">
-                <div class="structure-node parent"
-                    style="margin: 0 auto; border: 1px solid var(--accent-gold); padding: 15px 30px; background: var(--tertiary-dark);">
-                    <h4 style="margin: 0; color: #fff;">Saci Holdings</h4>
-                    <p style="margin: 5px 0 0; font-size: 10px; color: var(--accent-gold); text-transform: uppercase;">
-                        Strategic Governance Hub</p>
+            <!-- Visualization node cards -->
+            <div class="structure-visual-row reveal">
+                <!-- Tree Diagram -->
+                <div class="tree-container" style="margin-bottom: 80px; text-align: center;">
+                    <div class="tree-node parent"
+                        style="display: inline-block; border: 1px solid var(--accent-gold); padding: 20px 40px; background: var(--tertiary-dark); position: relative;">
+                        <h4 style="margin: 0; color: #fff;">Saci Holdings</h4>
+                        <p
+                            style="margin: 5px 0 0; font-size: 10px; color: var(--accent-gold); text-transform: uppercase;">
+                            Strategic Governance Hub</p>
+                    </div>
+                    <div class="tree-line"
+                        style="width: 2px; height: 40px; background: var(--accent-gold); margin: 0 auto; position: relative;">
+                    </div>
+                    <div class="tree-branches"
+                        style="display: flex; justify-content: center; gap: 80px; position: relative;">
+                        <div class="tree-node branch"
+                            style="border: 1px solid var(--glass-border); padding: 15px 30px; background: var(--tertiary-dark);">
+                            <h4 style="margin: 0; color: #fff;">Capitals & Investment</h4>
+                            <p
+                                style="margin: 5px 0 0; font-size: 10px; color: var(--text-muted); text-transform: uppercase;">
+                                PE & VC Firm</p>
+                        </div>
+                        <div class="tree-node branch"
+                            style="border: 1px solid var(--glass-border); padding: 15px 30px; background: var(--tertiary-dark);">
+                            <h4 style="margin: 0; color: #fff;">Operating Subsidiaries</h4>
+                            <p
+                                style="margin: 5px 0 0; font-size: 10px; color: var(--text-muted); text-transform: uppercase;">
+                                Real Estate, Media & Logistics</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tree-line"
-                    style="width: 2px; height: 40px; background: var(--accent-gold); margin: 0 auto;"></div>
-
-                <div class="grid-2" style="max-width: 800px; margin: 0 auto;">
-                    <div class="structure-node"
-                        style="border: 1px solid var(--glass-border); padding: 15px 30px; background: var(--tertiary-dark);">
-                        <h4 style="margin: 0; color: #fff;">Capitals & Investment</h4>
-                        <p
-                            style="margin: 5px 0 0; font-size: 10px; color: var(--text-muted); text-transform: uppercase;">
-                            PE & VC Firm</p>
+                <div class="grid-3" style="margin-top: 40px;">
+                    <div class="card reveal delay-100">
+                        <div class="card-kicker">Strategic Parent</div>
+                        <h3>SACI Holdings</h3>
+                        <p>Functions as the central hub for vision alignment, strategic oversight, and ecosystem synergy
+                            across all borders.</p>
                     </div>
-                    <div class="structure-node"
-                        style="border: 1px solid var(--glass-border); padding: 15px 30px; background: var(--tertiary-dark);">
-                        <h4 style="margin: 0; color: #fff;">Operating Subsidiaries</h4>
-                        <p
-                            style="margin: 5px 0 0; font-size: 10px; color: var(--text-muted); text-transform: uppercase;">
-                            Real Estate, Media & Logistics</p>
+                    <div class="card reveal delay-200">
+                        <div class="card-kicker">Investment Arm</div>
+                        <h3>Capitals & Investment</h3>
+                        <p>Directs concentrated funds that accelerate high growth, powering market expansion and
+                            strategic acquisitions.</p>
+                    </div>
+                    <div class="card reveal delay-300">
+                        <div class="card-kicker">Operating Subsidiaries</div>
+                        <h3>Direct Operations</h3>
+                        <p>A network of high-performing enterprises delivering excellence in Real Estate development,
+                            Logistics, and Global Media production.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -189,7 +244,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <div class="logo-text">SACI <span>HOLDINGS</span></div>
+                        <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings" class="logo-img">
                     </div>
                     <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
