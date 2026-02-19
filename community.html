@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://formspree.io">
     <title>Saci Holdings | Global Private Equity & AI Investment</title>
     <meta name="description"
         content="Saci Holdings is a global private equity firm specializing in acquiring and scaling high-growth businesses through AI and technology.">
@@ -32,7 +36,7 @@
     <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
             <a href="index.html" class="logo" aria-label="SACI Holdings Home">
-                <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings" class="logo-img">
+                <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings" class="logo-img" loading="eager" width="200" height="65">
             </a>
 
             <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
@@ -134,8 +138,12 @@
                     <h2 style="color: #fff; margin-bottom: 10px;">Submission Successful!</h2>
                     <p style="color: var(--text-body); margin-bottom: 30px;">Thank you for your interest in SACI
                         Holdings. You are now ready to join our global community.</p>
-                    <a href="https://chat.whatsapp.com/K9SUD5tSBNM1WQBIzwex09?mode=gi_t" class="btn btn-primary"
-                        style="display: inline-block; padding: 18px 40px;">JOIN WHATSAPP COMMUNITY</a>
+                    <div class="community-buttons" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://chat.whatsapp.com/K9SUD5tSBNM1WQBIzwex09?mode=gi_t" class="btn btn-primary"
+                            style="display: inline-block; padding: 18px 40px;">JOIN WHATSAPP COMMUNITY</a>
+                        <a href="https://t.me/+CDP5LDvh6KFmZmY0" class="btn btn-secondary"
+                            style="display: inline-block; padding: 18px 40px;">JOIN TELEGRAM COMMUNITY</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,7 +157,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings" class="logo-img">
+                        <img src="images/SACI-HOLDINGS-LOGO-2.png" alt="SACI Holdings" class="logo-img" loading="lazy" width="200" height="65">
                     </div>
                     <p>Transforming industries through strategic capital allocation and AI-powered innovation.</p>
                 </div>
