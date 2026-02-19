@@ -86,9 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleParallax);
 
     // 3.5 Auto-Active Navbar Links
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const pathname = window.location.pathname;
+    const pathSegments = pathname.replace(/\/$/, '').split('/').filter(Boolean);
+    const currentPath = pathSegments[pathSegments.length - 1] || 'index.html';
+    const isCommunityPage = pathname === '/community' || pathname === '/community/' || pathname.startsWith('/community/');
     document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        const href = link.getAttribute('href') || '';
+        const isCommunityLink = href === '/community/' || href.endsWith('community/');
+        const isActive = isCommunityLink ? isCommunityPage : (href === currentPath || href === currentPath + '.html');
+        if (isActive) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
