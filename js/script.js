@@ -190,6 +190,103 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, slideInterval);
     }
 
+    // 8.5. Trust Strip Carousel (Mobile)
+    const trustCarousel = document.querySelector('.trust-carousel');
+    const trustItems = document.querySelectorAll('.trust-item');
+    const trustDotsContainer = document.querySelector('.trust-carousel-dots');
+    
+    if (trustCarousel && trustItems.length > 0 && window.innerWidth <= 768) {
+        let currentTrustSlide = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let autoSlideInterval;
+
+        // Create dots
+        trustItems.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `trust-carousel-dot ${index === 0 ? 'active' : ''}`;
+            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+            dot.addEventListener('click', () => goToTrustSlide(index));
+            trustDotsContainer.appendChild(dot);
+        });
+
+        const goToTrustSlide = (index) => {
+            currentTrustSlide = index;
+            const translateX = -(index * 100) / trustItems.length;
+            trustCarousel.style.transform = `translateX(${translateX}%)`;
+            
+            // Update active dot
+            trustDotsContainer.querySelectorAll('.trust-carousel-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        };
+
+        // Auto-slide functionality
+        const startAutoSlide = () => {
+            autoSlideInterval = setInterval(() => {
+                currentTrustSlide = (currentTrustSlide + 1) % trustItems.length;
+                goToTrustSlide(currentTrustSlide);
+            }, 4000); // 4 seconds per slide
+        };
+
+        const stopAutoSlide = () => {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+        };
+
+        // Touch/swipe support
+        trustCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoSlide();
+        });
+
+        trustCarousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoSlide();
+        });
+
+        const handleSwipe = () => {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    currentTrustSlide = (currentTrustSlide + 1) % trustItems.length;
+                } else {
+                    // Swipe right - previous slide
+                    currentTrustSlide = (currentTrustSlide - 1 + trustItems.length) % trustItems.length;
+                }
+                goToTrustSlide(currentTrustSlide);
+            }
+        };
+
+        // Initialize
+        goToTrustSlide(0);
+        startAutoSlide();
+
+        // Pause on hover (if mouse/touch device)
+        trustCarousel.addEventListener('mouseenter', stopAutoSlide);
+        trustCarousel.addEventListener('mouseleave', startAutoSlide);
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768) {
+                    stopAutoSlide();
+                    trustCarousel.style.transform = 'none';
+                } else {
+                    goToTrustSlide(currentTrustSlide);
+                    startAutoSlide();
+                }
+            }, 250);
+        });
+    }
+
     // 9. Community Form Submission (AJAX)
     const communityForm = document.getElementById('community-form');
     const formSuccess = document.getElementById('form-success');
