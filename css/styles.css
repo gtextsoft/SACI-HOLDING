@@ -786,6 +786,49 @@ section {
     flex-wrap: wrap;
 }
 
+/* Hero countdown */
+.hero-countdown {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+}
+.hero-countdown .countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.hero-countdown .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.hero-countdown .countdown-number {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+}
+.hero-countdown .countdown-unit {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-body);
+    margin-top: 4px;
+}
+.hero-countdown .countdown-caption {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
 .hero .hero-buttons .btn-primary {
     background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
     color: var(--primary-dark);
@@ -923,6 +966,19 @@ section {
         background: rgba(2, 4, 6, 0.85);
         margin-top: 20px;
     }
+
+    .hero-countdown .countdown-container {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hero-countdown .countdown-number {
+        font-size: 36px;
+    }
+
+    .hero-countdown .countdown-caption {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -939,6 +995,14 @@ section {
     .hero .intro-main {
         padding: 35px 25px;
         margin-top: 30px;
+    }
+
+    .hero-countdown .countdown-container {
+        gap: 16px;
+    }
+
+    .hero-countdown .countdown-number {
+        font-size: 32px;
     }
 }
 
@@ -1463,6 +1527,13 @@ section {
     font-size: 18px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 24px;
+}
+
+.featured-desc-secondary {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 40px;
 }
 

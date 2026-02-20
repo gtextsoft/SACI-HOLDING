@@ -118,29 +118,24 @@
                     <div class="form-group">
                         <label class="form-label">Which Best Describes You?</label>
                         <select class="form-select" name="role" required>
+                            <option value="">Select...</option>
+                            <option value="business_owner_operator">Business Owner/Operator</option>
+                            <option value="advisor_partner">Advisor/Partner</option>
                             <option value="investor">Investor</option>
-                            <option value="owner">Property Owner</option>
-                            <option value="entrepreneur">Entrepreneur</option>
-                            <option value="other">Other</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Investor/Business Stage</label>
-                        <select class="form-select" name="stage">
-                            <option value="angel">Angel / Early Stage (&lt;$250k)</option>
-                            <option value="growth">Growth Stage ($250k - $1M)</option>
-                            <option value="scale">Scale Up ($1M+)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Industry</label>
-                        <select class="form-select" name="industry">
-                            <option value="ai">AI / Technology</option>
+                        <label class="form-label">Industries</label>
+                        <select class="form-select" name="industry" required>
+                            <option value="">Select...</option>
+                            <option value="ai_tech">AI / Tech</option>
+                            <option value="transportation_logistics">Transportation & Logistics</option>
+                            <option value="electric_vehicles">Electric Vehicles</option>
+                            <option value="biotech_life_sciences">Biotech / Life Sciences</option>
                             <option value="real_estate">Real Estate</option>
-                            <option value="logistics">Logistics</option>
-                            <option value="fintech">Fintech</option>
+                            <option value="exit_sell_side">Exit / Sell Side Inquiry</option>
+                            <option value="multi_sector">Multi-sector / General Inquiry</option>
                         </select>
                     </div>
 

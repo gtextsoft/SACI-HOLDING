@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // 7. Countdown Timer
     const countdownTarget = new Date();
-    countdownTarget.setDate(countdownTarget.getDate() + 15); // 15 days from now
+    countdownTarget.setDate(countdownTarget.getDate() + 24); // 24 days from now - UNTIL LAUNCH
 
     const updateCountdown = () => {
         const now = new Date().getTime();
