@@ -1,0 +1,556 @@
+/* =========================================================
+   SACI HOLDINGS — HOME PAGE REDESIGN
+   Clean, editorial, premium
+   ========================================================= */
+
+/* ---------------------------
+   New Hero
+---------------------------- */
+.home-hero .hero-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-hero .hero-scroll-indicator .mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    position: relative;
+}
+
+.home-hero .hero-scroll-indicator .mouse::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background: var(--accent-gold);
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: mouseWheel 2s infinite;
+}
+
+@keyframes mouseWheel {
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    100% { transform: translate(-50%, 20px); opacity: 0; }
+}
+
+.home-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0c1117 50%, var(--primary-dark) 100%);
+    overflow: hidden;
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/hero-bg.png') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+    background-attachment: fixed;
+}
+
+.home-hero .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 24px;
+}
+
+.home-hero .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
+}
+
+.home-hero .hero-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 28px;
+}
+
+.home-hero .hero-headline .highlight {
+    color: var(--accent-gold);
+    display: block;
+    margin-top: 0.1em;
+}
+
+.home-hero .hero-subhead {
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.7;
+    color: var(--text-body);
+    max-width: 640px;
+    margin: 0 auto 40px;
+}
+
+.home-hero .hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home-hero .hero-cta .btn {
+    min-width: 220px;
+}
+
+.home-hero .hero-countdown {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.home-hero .countdown-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.home-hero .countdown-block {
+    text-align: center;
+}
+
+.home-hero .countdown-block .num {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+}
+
+.home-hero .countdown-block .unit {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+.home-hero .countdown-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-top: 16px;
+}
+
+/* ---------------------------
+   Stats Bar
+---------------------------- */
+.home-stats-bar {
+    background: var(--secondary-dark);
+    padding: 48px 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.home-stats-bar .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+}
+
+.home-stats-bar .stat-item .value {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 700;
+    color: var(--white);
+}
+
+.home-stats-bar .stat-item .label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-top: 6px;
+}
+
+/* ---------------------------
+   Who We Are - Split
+---------------------------- */
+.home-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+    background: var(--primary-dark);
+}
+
+.home-about-image {
+    background: url('../images/sacisec.avif') center/cover no-repeat;
+    position: relative;
+}
+
+.home-about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 40%, var(--primary-dark) 100%);
+}
+
+.home-about-content {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-about .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+}
+
+.home-about h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 3.5vw, 44px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+.home-about .about-desc {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text-body);
+    margin-bottom: 32px;
+}
+
+/* ---------------------------
+   Expertise - Horizontal
+---------------------------- */
+.home-expertise {
+    padding: 100px 0;
+    background: var(--secondary-dark);
+}
+
+.home-expertise .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.home-expertise h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.home-expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.home-expertise-card {
+    background: var(--tertiary-dark);
+    border: 1px solid var(--glass-border);
+    padding: 40px 32px;
+    transition: var(--transition-smooth);
+}
+
+.home-expertise-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-4px);
+}
+
+.home-expertise-card .num {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+.home-expertise-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.home-expertise-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-body);
+}
+
+/* ---------------------------
+   Sectors - Bento
+---------------------------- */
+.home-sectors {
+    padding: 100px 0;
+    background: var(--primary-dark);
+}
+
+.home-sectors .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.home-sectors h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.home-sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.home-sector-card {
+    position: relative;
+    height: 280px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+}
+
+.home-sector-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+}
+
+.home-sector-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.home-sector-card .sector-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+}
+
+.home-sector-card h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* ---------------------------
+   CTA Block
+---------------------------- */
+.home-cta {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.home-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.home-cta .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+}
+
+.home-cta h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.home-cta p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-body);
+    margin-bottom: 32px;
+}
+
+.home-cta .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------------------------
+   Subsidiary Strip
+---------------------------- */
+.home-subsidiaries {
+    padding: 48px 0;
+    background: var(--secondary-dark);
+    border-top: 1px solid var(--glass-border);
+}
+
+.home-subsidiaries .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    opacity: 0.6;
+}
+
+.home-subsidiaries .logos img {
+    height: 36px;
+    width: auto;
+    filter: grayscale(1) brightness(1.5);
+    transition: var(--transition-smooth);
+}
+
+.home-subsidiaries .logos a:hover img,
+.home-subsidiaries .logos img:hover {
+    opacity: 1;
+    filter: grayscale(0) brightness(1);
+}
+
+/* ---------------------------
+   Responsive
+---------------------------- */
+@media (max-width: 992px) {
+    .home-about {
+        grid-template-columns: 1fr;
+    }
+
+    .home-about-image {
+        min-height: 320px;
+    }
+
+    .home-about-image::after {
+        background: linear-gradient(to bottom, transparent 30%, var(--primary-dark) 100%);
+    }
+
+    .home-about-content {
+        padding: 60px 40px;
+    }
+
+    .home-expertise-grid,
+    .home-sectors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-stats-bar .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-hero {
+        padding-top: 100px;
+    }
+
+    .home-hero .hero-cta {
+        flex-direction: column;
+    }
+
+    .home-hero .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .home-hero .countdown-row {
+        gap: 28px;
+    }
+
+    .home-stats-bar .stats-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .home-stats-bar {
+        padding: 40px 0;
+    }
+
+    .home-about-content {
+        padding: 48px 24px;
+    }
+
+    .home-expertise,
+    .home-sectors,
+    .home-cta {
+        padding: 64px 0;
+    }
+
+    .home-expertise h2,
+    .home-sectors h2 {
+        margin-bottom: 40px;
+    }
+
+    .home-sector-card {
+        height: 240px;
+    }
+
+    .home-subsidiaries .logos {
+        gap: 32px;
+    }
+
+    .home-subsidiaries .logos img {
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero .hero-inner {
+        padding: 0 20px;
+    }
+
+    .home-hero .countdown-block .num {
+        font-size: 28px;
+    }
+
+    .home-hero .countdown-row {
+        gap: 20px;
+    }
+}
