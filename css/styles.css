@@ -630,7 +630,8 @@ section {
 ---------------------------- */
 .hero {
     height: 100vh;
-    min-height: 700px;
+    min-height: 600px;
+    max-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -709,6 +710,8 @@ section {
 .hero .intro-main .hero-desc-reduced {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 40px;
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: 1.7;
 }
 
 /* Scroll Indicator */
@@ -872,6 +875,28 @@ section {
     border-bottom: 1px solid var(--glass-border);
 }
 
+/* Home Intro Stats Strip - 4-column layout */
+.home-intro-stats {
+    padding: 60px 0;
+}
+
+.intro-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro-stats-grid .small-stat {
+    align-items: center;
+}
+
+.intro-stats-grid .small-stat .val {
+    font-size: clamp(32px, 4vw, 48px);
+}
+
 .intro-grid {
     display: flex;
     align-items: center;
@@ -895,9 +920,14 @@ section {
 }
 
 .hero-title-reduced {
-    font-size: clamp(32px, 4vw, 56px);
+    font-size: clamp(28px, 3.5vw, 52px);
     margin-bottom: 24px;
-    line-height: 1.1;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.hero-title-reduced br {
+    display: none;
 }
 
 .hero-desc-reduced {
@@ -947,24 +977,59 @@ section {
         width: 100%;
         justify-content: space-around;
     }
+
+    /* Intro stats grid - 2x2 on tablet */
+    .intro-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+
+    .home-intro-stats {
+        padding: 50px 0;
+    }
 }
 
 @media (max-width: 768px) {
     .hero {
         padding-top: 100px;
+        min-height: 100vh;
     }
 
     .hero .container {
         padding: 0 20px;
-        top: 60%;
+        top: 55%;
         transform: translate(-50%, -50%);
+        width: 100%;
     }
 
     .hero .intro-main {
         text-align: center;
         padding: 40px 30px;
-        background: rgba(2, 4, 6, 0.85);
+        background: rgba(2, 4, 6, 0.9);
         margin-top: 20px;
+    }
+
+    .hero .intro-main .hero-desc-reduced {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-title-reduced br {
+        display: block;
+    }
+
+    .hero-title-reduced {
+        font-size: clamp(24px, 6vw, 36px);
+    }
+
+    .hero-countdown {
+        margin-top: 28px;
+        padding-top: 24px;
     }
 
     .hero-countdown .countdown-container {
@@ -979,30 +1044,93 @@ section {
     .hero-countdown .countdown-caption {
         text-align: center;
     }
+
+    /* Intro stats - single column on mobile */
+    .intro-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .home-intro-stats {
+        padding: 40px 0;
+    }
+
+    .subsidiary-preview {
+        gap: 24px;
+        padding: 0 10px;
+    }
+
+    .sub-logo img {
+        height: 32px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding-top: 120px;
-        min-height: 100vh;
+        padding-top: 100px;
+        min-height: 100svh;
     }
 
     .hero .container {
-        top: 55%;
-        padding: 0 15px;
+        top: 50%;
+        padding: 0 16px;
     }
 
     .hero .intro-main {
-        padding: 35px 25px;
-        margin-top: 30px;
+        padding: 28px 20px;
+        margin-top: 20px;
+    }
+
+    .hero .intro-main .section-tag {
+        font-size: 10px;
+        letter-spacing: 0.15em;
+    }
+
+    .hero-title-reduced {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .hero .intro-main .hero-desc-reduced {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .hero .hero-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 24px;
+        font-size: 13px;
+    }
+
+    .hero-countdown {
+        margin-top: 24px;
+        padding-top: 20px;
     }
 
     .hero-countdown .countdown-container {
         gap: 16px;
+        justify-content: space-between;
     }
 
     .hero-countdown .countdown-number {
-        font-size: 32px;
+        font-size: 28px;
+    }
+
+    .hero-countdown .countdown-unit {
+        font-size: 10px;
+    }
+
+    .hero-scroll-indicator {
+        bottom: 24px;
+    }
+
+    .home-intro-stats {
+        padding: 36px 0;
+    }
+
+    .intro-stats-grid .small-stat .val {
+        font-size: 36px;
     }
 }
 
@@ -2900,19 +3028,90 @@ footer::before {
 
     .featured-image-block {
         height: auto;
+        min-height: 500px;
         padding: 80px 0;
     }
 
     .featured-image-bg {
         background-attachment: scroll;
+        background-position: center top;
     }
 
     .featured-overlay {
         background: rgba(2, 4, 6, 0.85);
     }
 
+    .featured-content {
+        text-align: center;
+        max-width: 100%;
+        padding: 30px 0;
+    }
+
+    .featured-desc {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Safe area for notched devices */
+    .hero {
+        padding-top: env(safe-area-inset-top, 0);
+    }
+
+    .hero-scroll-indicator {
+        bottom: calc(24px + env(safe-area-inset-bottom, 0));
+    }
+
+    .scroll-to-top {
+        right: calc(20px + env(safe-area-inset-right, 0));
+        bottom: calc(20px + env(safe-area-inset-bottom, 0));
+    }
+
     .featured-actions {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Visual cards - full width, reduced height on mobile */
+    .visual-card {
+        height: 320px;
+        padding: 30px 24px;
+    }
+
+    .visual-card h3 {
+        font-size: 20px;
+    }
+
+    .visual-card p {
+        font-size: 14px;
+    }
+
+    /* Stats section mobile */
+    .stats-section {
+        padding: 60px 0;
+    }
+
+    /* CTA mobile */
+    .cta-card {
+        padding: 40px 24px;
+    }
+
+    .cta-card h2 {
+        font-size: 26px;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -2935,6 +3134,19 @@ footer::before {
 
     .stats-grid-4 {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .stats-section {
+        padding: 50px 0;
+    }
+
+    .stat-box {
+        padding: 24px 20px;
+    }
+
+    .stat-val {
+        font-size: 36px !important;
     }
 
     .card {
@@ -2943,6 +3155,23 @@ footer::before {
 
     .card h3 {
         font-size: 18px;
+    }
+
+    .visual-card {
+        height: 280px;
+        padding: 24px 20px;
+    }
+
+    .visual-card h3 {
+        font-size: 18px;
+    }
+
+    .portfolio-item {
+        min-height: 300px;
+    }
+
+    .cta-card h2 {
+        font-size: 22px;
     }
 
     .footer-watermark {

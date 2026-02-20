@@ -126,6 +126,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="form-label">Investor/Business Stage</label>
+                        <select class="form-select" name="stage">
+                            <option value="">Select...</option>
+                            <option value="angel">Angel / Early Stage (&lt;$250k)</option>
+                            <option value="growth">Growth Stage ($250k - $1M)</option>
+                            <option value="scale">Scale Up ($1M+)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label class="form-label">Industries</label>
                         <select class="form-select" name="industry" required>
                             <option value="">Select...</option>
@@ -141,7 +151,7 @@
 
                     <div class="form-group">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-input" name="name" placeholder="John Smith" required
+                        <input type="text" class="form-input" name="name" placeholder="Jane Smith" required
                             style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
