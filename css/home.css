@@ -8,9 +8,11 @@
 ---------------------------- */
 .home-hero .hero-scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 9px;
     left: 50%;
     transform: translateX(-50%);
+    /* Hide globally to prevent overlap with countdown/sections */
+    display: none;
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -541,6 +543,16 @@
 
     .home-subsidiaries .logos img {
         height: 28px;
+    }
+
+    /* Hide scroll indicator on mobile to avoid crowding the countdown */
+    .home-hero .hero-scroll-indicator {
+        display: none;
+    }
+
+    /* Disable fixed background attachment on mobile to prevent jitter */
+    .home-hero::before {
+        background-attachment: scroll;
     }
 }
 
