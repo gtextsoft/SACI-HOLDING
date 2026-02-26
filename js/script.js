@@ -298,6 +298,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const formSuccess = document.getElementById('form-success');
     const submitBtn = document.getElementById('submit-btn');
 
+    const volunteerForm = document.getElementById('volunteer-form');
+    const volunteerSuccess = document.getElementById('volunteer-success');
+    const volunteerSubmitBtn = document.getElementById('volunteer-submit');
+
+    const hasDangerousChars = (value) => {
+        if (!value) return false;
+        // Block characters commonly used in script/injection payloads
+        return /[<>`{}]/.test(value);
+    };
+
+    const isValidEmail = (value) => {
+        if (!value) return false;
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    };
+
+    const isValidPhone = (value) => {
+        if (!value) return true; // optional
+        return /^[0-9+\-\s().]{6,30}$/.test(value);
+    };
+
     if (communityForm) {
         communityForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -306,6 +326,57 @@ document.addEventListener('DOMContentLoaded', () => {
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerText = 'Submitting...';
+            }
+
+            const formValues = {
+                role: communityForm.elements['role']?.value?.trim() || '',
+                stage: communityForm.elements['stage']?.value?.trim() || '',
+                industry: communityForm.elements['industry']?.value?.trim() || '',
+                name: communityForm.elements['name']?.value?.trim() || '',
+                email: communityForm.elements['email']?.value?.trim() || '',
+                phone: communityForm.elements['phone']?.value?.trim() || '',
+                location: communityForm.elements['location']?.value?.trim() || '',
+            };
+
+            // Basic required checks (in addition to HTML5)
+            if (!formValues.role || !formValues.industry || !formValues.name || !formValues.email) {
+                alert('Please fill in all required fields.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Submit';
+                }
+                return;
+            }
+
+            // Reject obviously dangerous characters to reduce injection attempts
+            const communityFieldsToCheck = ['name', 'email', 'phone', 'location'];
+            for (const field of communityFieldsToCheck) {
+                if (hasDangerousChars(formValues[field])) {
+                    alert('Please remove special characters like <, >, {, } or backticks from your input.');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'Submit';
+                    }
+                    return;
+                }
+            }
+
+            if (!isValidEmail(formValues.email)) {
+                alert('Please enter a valid email address.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Submit';
+                }
+                return;
+            }
+
+            if (!isValidPhone(formValues.phone)) {
+                alert('Please enter a valid phone number (digits, spaces, +, -, (, ) only).');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Submit';
+                }
+                return;
             }
 
             const formData = new FormData(communityForm);
@@ -348,6 +419,107 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerText = 'Submit';
+                }
+            }
+        });
+    }
+
+    if (volunteerForm) {
+        volunteerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (volunteerSubmitBtn) {
+                volunteerSubmitBtn.disabled = true;
+                volunteerSubmitBtn.innerText = 'Submitting...';
+            }
+
+            const vValues = {
+                full_name: volunteerForm.elements['full_name']?.value?.trim() || '',
+                location: volunteerForm.elements['location']?.value?.trim() || '',
+                availability: volunteerForm.elements['availability']?.value?.trim() || '',
+                background_experience: volunteerForm.elements['background_experience']?.value?.trim() || '',
+                vc_pe_comfortable: volunteerForm.elements['vc_pe_comfortable']?.value || '',
+                email: volunteerForm.elements['email']?.value?.trim() || '',
+                phone: volunteerForm.elements['phone']?.value?.trim() || '',
+            };
+
+            if (!vValues.full_name || !vValues.location || !vValues.availability || !vValues.background_experience || !vValues.vc_pe_comfortable || !vValues.email) {
+                alert('Please fill in all required fields.');
+                if (volunteerSubmitBtn) {
+                    volunteerSubmitBtn.disabled = false;
+                    volunteerSubmitBtn.innerText = 'Submit Application';
+                }
+                return;
+            }
+
+            const volunteerFieldsToCheck = ['full_name', 'location', 'availability', 'background_experience', 'email', 'phone'];
+            for (const field of volunteerFieldsToCheck) {
+                if (hasDangerousChars(vValues[field])) {
+                    alert('Please remove special characters like <, >, {, } or backticks from your input.');
+                    if (volunteerSubmitBtn) {
+                        volunteerSubmitBtn.disabled = false;
+                        volunteerSubmitBtn.innerText = 'Submit Application';
+                    }
+                    return;
+                }
+            }
+
+            if (!isValidEmail(vValues.email)) {
+                alert('Please enter a valid email address.');
+                if (volunteerSubmitBtn) {
+                    volunteerSubmitBtn.disabled = false;
+                    volunteerSubmitBtn.innerText = 'Submit Application';
+                }
+                return;
+            }
+
+            if (!isValidPhone(vValues.phone)) {
+                alert('Please enter a valid phone number (digits, spaces, +, -, (, ) only).');
+                if (volunteerSubmitBtn) {
+                    volunteerSubmitBtn.disabled = false;
+                    volunteerSubmitBtn.innerText = 'Submit Application';
+                }
+                return;
+            }
+
+            const vFormData = new FormData(volunteerForm);
+
+            try {
+                const response = await fetch(volunteerForm.action, {
+                    method: 'POST',
+                    body: vFormData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    volunteerForm.style.display = 'none';
+                    if (volunteerSuccess) {
+                        volunteerSuccess.style.display = 'block';
+                        volunteerSuccess.classList.add('active');
+                    }
+                    window.scrollTo({
+                        top: volunteerForm.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        alert(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        alert("Oops! There was a problem submitting your form. Please try again.");
+                    }
+                    if (volunteerSubmitBtn) {
+                        volunteerSubmitBtn.disabled = false;
+                        volunteerSubmitBtn.innerText = 'Submit Application';
+                    }
+                }
+            } catch (error) {
+                alert("Oops! There was a problem submitting your form. Please check your connection.");
+                if (volunteerSubmitBtn) {
+                    volunteerSubmitBtn.disabled = false;
+                    volunteerSubmitBtn.innerText = 'Submit Application';
                 }
             }
         });

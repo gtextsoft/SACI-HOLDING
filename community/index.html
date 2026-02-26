@@ -114,7 +114,7 @@
     <section class="section" style="background: var(--primary-dark);">
         <div class="container">
             <div class="form-container reveal-scale delay-100" style="max-width: 800px; margin: 0 auto;">
-                <form id="community-form" action="https://formspree.io/f/mdalkzzg" method="POST">
+                <form id="community-form" action="https://formspree.io/f/mdalkzzg" method="POST" accept-charset="UTF-8" autocomplete="on">
                     <div class="form-group">
                         <label class="form-label">Which Best Describes You?</label>
                         <select class="form-select" name="role" required>
@@ -151,25 +151,25 @@
 
                     <div class="form-group">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-input" name="name" placeholder="Jane Smith" required
+                        <input type="text" class="form-input" name="name" placeholder="Jane Smith" required maxlength="100"
                             style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-input" name="email" placeholder="name@gmail.com" required
+                        <input type="email" class="form-input" name="email" placeholder="name@gmail.com" required maxlength="150"
                             style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-input" name="phone" placeholder="+1 374 273 2378"
+                        <input type="tel" class="form-input" name="phone" placeholder="+1 374 273 2378" maxlength="30"
                             style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Location</label>
-                        <input type="text" class="form-input" name="location" placeholder="i.e Houston"
+                        <input type="text" class="form-input" name="location" placeholder="i.e Houston" maxlength="120"
                             style="border: 1px solid rgba(255,255,255,0.1); background: transparent;">
                     </div>
 
