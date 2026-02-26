@@ -2740,6 +2740,27 @@ footer::before {
     opacity: 1;
 }
 
+/* Volunteer layout (two-column on desktop, stacked on mobile) */
+.volunteer-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+    .volunteer-layout {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .volunteer-layout {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+}
+
 /* ---------------------------
    16) Responsive (ONE set)
 ---------------------------- */
