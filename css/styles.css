@@ -776,6 +776,13 @@ body.is-ready .home-hero .fade-copy,
     margin-bottom: 18px;
 }
 
+.estate-brand {
+    display: block;
+    height: 88px;
+    max-width: 220px;
+    margin-bottom: 20px;
+}
+
 .company-mark-text {
     height: auto;
     margin-bottom: 12px;
