@@ -117,6 +117,41 @@
     max-width: 34ch;
 }
 
+.home-chairman {
+    padding: var(--section-y) 0;
+    border-top: 1px solid var(--rule);
+}
+
+.chairman-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 64px;
+    align-items: center;
+}
+
+.chairman-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    min-height: 0;
+    background: var(--island);
+    overflow: hidden;
+}
+
+.chairman-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.chairman-copy p {
+    max-width: 42ch;
+    margin-bottom: 28px;
+}
+
 .home-holdings {
     padding: 48px 0;
     border-top: 1px solid var(--rule);
@@ -310,6 +345,18 @@
     .holdings-row {
         justify-content: flex-start;
         gap: 28px 40px;
+    }
+
+    .chairman-split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .chairman-photo {
+        order: -1;
+        max-width: 420px;
+        margin-inline: auto;
+        width: 100%;
     }
 }
 

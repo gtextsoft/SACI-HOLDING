@@ -591,6 +591,20 @@ body.is-ready .home-hero .fade-copy,
     min-height: 420px;
 }
 
+.split-image.chairman-portrait {
+    position: relative;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 5;
+}
+
+.split-image.chairman-portrait img {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center top;
+}
+
 .split-image img,
 .image-frame img {
     width: 100%;
@@ -1211,6 +1225,7 @@ footer p {
     .focus-card-content { padding: 40px var(--gutter) 64px; }
     .pillar-content { padding: 32px 0 48px; }
     .split-image { min-height: 280px; }
+    .split-image.chairman-portrait { min-height: 0; }
 
     .chapter-hero {
         padding: calc(var(--nav-h) + 48px) 0 48px;
@@ -1271,10 +1286,17 @@ footer p {
     }
 
     .pillar-img,
-    .split-image,
+    .split-image:not(.chairman-portrait),
     .focus-card-image {
         min-height: 220px;
         height: 220px;
+    }
+
+    .split-image.chairman-portrait {
+        height: auto;
+        min-height: 0;
+        max-width: 420px;
+        width: 100%;
     }
 
     .projections-table th,
